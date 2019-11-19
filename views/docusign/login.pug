@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        meta(meta charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        title= title
+        meta(name="description" content="")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="robots" content="all,follow")
+        link(rel="stylesheet" href="/bubbly-client/vendor/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800")
+        link(rel="stylesheet" href="/bubbly-client/css/orionicons.css")
+        link(rel="stylesheet" href="/bubbly-client/css/style.default.css" id="theme-stylesheet")
+        link(rel="stylesheet" href="/bubbly-client/css/custom.css")
+
+    body
+
+        .page-holder.d-flex.align-items-center
+            .container
+                .row.align-items-center.py-5
+                    .col-5.col-lg-7.mx-auto.mb-5.mb-lg-0
+                        .pr-lg-5
+                        img.img-fluid(src='/bubbly-client/img/illustration.svg', alt='')
+                    .col-lg-5.px-lg-4
+                        h1.text-base.text-primary.text-uppercase.mb-4 Act Docusign
+                        h2.mb-4 Login
+                        p.text-muted
+                        //- | Docusign
+                        form#loginForm.mt-4(action='/docusign/login-user' method="post")
+                            .form-group.mb-4
+                                input.form-control.border-0.shadow.form-control-lg(type='text', name='username', placeholder='Username' required)
+                            .form-group.mb-4
+                                input.form-control.border-0.shadow.form-control-lg.text-violet(type='password', name='password', placeholder='Password' required)
+                            button.btn.btn-primary.shadow.px-5(type='submit') Log in
+                    p.mt-5.mb-0.text-gray-400.text-center
+                    | Design by 
+                    a.external.text-gray-400(href='https://bootstrapious.com/admin-templates') Bootstrapious
+                    |  & Your company
+
+
+        script(src="/jquery/jquery-3.3.1.min.js")
+        script(src="/bubbly-client/vendor/popper.js/umd/popper.min.js")
+        script(src="/bubbly-client/vendor/bootstrap/js/bootstrap.min.js")
+        script(src="/bubbly-client/vendor/jquery.cookie/jquery.cookie.js")
+        script(src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js")
+        script(src="/bubbly-client/js/front.js")

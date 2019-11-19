@@ -1,0 +1,22 @@
+/* your styles go here */
+.fixed-navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 111;
+}
+
+.fixed-sidebar{
+    position: fixed;
+    z-index: 111;
+}
+
+
+#docu_right_menu{
+    position: fixed;
+    top: 10;
+    right: 0;
+    z-index: 222;
+    padding: 10px;
+    border: solid 1px black;
+}

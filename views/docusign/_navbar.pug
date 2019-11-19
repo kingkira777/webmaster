@@ -1,0 +1,24 @@
+header.header
+    nav.navbar.navbar-expand-lg.px-4.py-2.bg-white.shadow
+        a.sidebar-toggler.text-gray-500.mr-4.mr-lg-5.lead(href='#')
+            i.fas.fa-align-left
+        a.navbar-brand.font-weight-bold.text-uppercase.text-base(href='index.html') Bubbly Dashboard
+        ul.ml-auto.d-flex.align-items-center.list-unstyled.mb-0
+            //- li.nav-item
+            //-     form#searchForm.ml-auto.d-none.d-lg-block
+            //-         .form-group.position-relative.mb-0
+            //-             button.position-absolute.bg-white.border-0.p-0(type='submit', style='top: -3px; left: 0;')
+            //-                 i.o-search-magnify-1.text-gray.text-lg
+            //-             input.form-control.form-control-sm.border-0.no-shadow.pl-4(type='search', placeholder='Search ...')  
+            li.nav-item.dropdown.ml-auto
+                a#userInfo.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    img.img-fluid.rounded-circle.shadow(src='https://via.placeholder.com/150', alt='Jason Doe', style='max-width: 2.5rem;')
+                .dropdown-menu(aria-labelledby='userInfo')
+                    a.dropdown-item(href='#')
+                    //-     strong.d-block.text-uppercase.headings-font-family Mark Stephen
+                    //-     small Web Developer
+                    //- .dropdown-divider
+                    //- a.dropdown-item(href='#') Settings
+                    //- a.dropdown-item(href='#') Activity log       
+                    .dropdown-divider
+                    a.dropdown-item(href='/docusign/logout') Logout

@@ -1,0 +1,37 @@
+extends ../docusign_layout.pug 
+
+block content 
+
+    .row  
+        .col-sm-12  
+            .card
+                .card-header 
+                    .row
+                        .col-sm-6
+                            h4 Docusing List
+                        .col-sm-6(align="right") 
+                            a(role="button" href="/docusign/signed-all").btn.btn-success.btn-sm.right
+                                i.fa.fa-pencil Sign All
+                    
+                .card-body 
+                    table#docu-table-list.table.table-stripped.table-hover 
+                        thead 
+                            tr  
+                                th Filename 
+                                th(style="width:150px;") Options
+                        tbody
+                            each doc in doclist
+                                tr 
+                                    td=doc.doc_filename 
+                                    td 
+                                        a(href="/docusign/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path).btn.btn-primary.btn-sm.btn-round 
+                                            i.fa.fa-edit
+                                        a(href="/docusign/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
+                                            i.fa.fa-trash
+
+                .card-footer
+                    form(action="/docusign/upload-file" method="post" encType="multipart/form-data")
+                        input(type="file" name="file")
+                        button.btn.btn-primary.btn-sm 
+                            i.fa.fa-upload Upload
+                   

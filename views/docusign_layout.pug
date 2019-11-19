@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(meta charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title= title
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="robots" content="all,follow")
+    link(rel="stylesheet" href="/bubbly-client/vendor/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800")
+    link(rel="stylesheet", href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css")
+    link(rel="stylesheet" href="/bubbly-client/css/orionicons.css")
+    link(rel="stylesheet" href="/bubbly-client/css/style.default.css" id="theme-stylesheet")
+    link(rel="stylesheet" href="/bubbly-client/css/custom.css") 
+
+  body
+
+    include docusign/_navbar.pug 
+
+    .d-flex.align-items-stretch
+      include docusign/_sidebar.pug 
+
+      .page-holder.w-100.d-flex.flex-wrap
+        .container-fluid.px-xl-5
+          section.py-5
+            block content
+
+    
+    script(src="/jquery/jquery-3.3.1.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js")
+    script(src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js")
+    script(src="/x_docusign/pdfjs/build/pdf.js")
+    script(src="/x_docusign/pdfjs/build/pdf.worker.js")
+    script(src="/x_docusign/displace/displace.min.js")
+    script(src="/x_docusign/htmltocanvas/html2canvas.min.js")
+    script(src="/javascripts/docusign/js_docusign.js")
+
+    script(src="/bubbly-client/vendor/popper.js/umd/popper.min.js")
+    script(src="/bubbly-client/vendor/bootstrap/js/bootstrap.min.js")
+    script(src="/bubbly-client/vendor/jquery.cookie/jquery.cookie.js")
+    script(src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js")
+    script(src="/bubbly-client/js/front.js")
+
+    script. 
+      $(document).ready( function () {
+          $('#docu-table-list').DataTable();
+      });
