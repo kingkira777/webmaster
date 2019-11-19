@@ -31,13 +31,13 @@ var httpsServer = https.createServer(credentials,app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(8080);
-server.on('error', onError);
-server.on('listening', onListening);
+server.listen(3000);
+// server.on('error', onError);
+// server.on('listening', onListening);
 
-httpsServer.listen(8443);
-httpsServer.on('error', onError);
-httpsServer.on('error', onListening);
+httpsServer.listen(3000);
+// httpsServer.on('error', onError);
+// httpsServer.on('error', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
