@@ -28,13 +28,11 @@ app.use(express.static(path.join(__dirname, 'templates')));
 app.use(express.static(path.join(__dirname, 'files')));
 app.use(express.static(path.join(__dirname, 'modules')));
 app.use(fileUpload());
-
-app.set('trust proxy', 1)
 app.use(session({
     secret: 'king',
     resave : true,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: {}
 }));
 
 
