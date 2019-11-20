@@ -61,8 +61,8 @@ router.get('/signed-docs',function(req,res,next){
 //Open Document
 router.get('/open-document?',function(req,res,next){
     if(req.session.branch){
-        res.header('Access-Control-Allow-Origin', "*");
-        res.header('Access-Control-Allow-Headers', "*");
+        res.setHeader('Access-Control-Allow-Origin', "*");
+        res.setHeader('Access-Control-Allow-Headers', "*");
         res.render('docusign/open_docu',{title : 'Open Document', accesslvl : req.session.accesslvl});
         res.end();
     }else{
