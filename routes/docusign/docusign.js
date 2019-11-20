@@ -29,6 +29,17 @@ router.get('/', function(req, res, next) {
     
 });
 
+
+//Open PDF File
+router.get('/open-file?',function(req,res,next){
+    var path = req.query.path;
+    fs.readFile(path,function(err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
+});
+
+//Get Signed Docs
 router.get('/signed-docs',function(req,res,next){
     if(!req.session.branch)
         return;
