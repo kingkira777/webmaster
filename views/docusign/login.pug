@@ -25,8 +25,9 @@ html
                     .col-lg-5.px-lg-4
                         h1.text-base.text-primary.text-uppercase.mb-4 Act Docusign
                         h2.mb-4 Login
-                        p.text-muted
-                        //- | Docusign
+                        if(isFailed)
+                            p.text-muted
+                            | Invalid Crendentials
                         form#loginForm.mt-4(action='/docusign/login-user' method="post")
                             .form-group.mb-4
                                 input.form-control.border-0.shadow.form-control-lg(type='text', name='username', placeholder='Username' required)

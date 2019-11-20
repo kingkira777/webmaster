@@ -21,7 +21,7 @@ $(function () {
             }
         }).then((rs)=>{
             if(rs.data.message == "signed"){
-                alert("Successfuly Signed");
+                swal ( "Singed" ,  "Successfuly Signed" ,  "success");
             }
         });
     };
@@ -67,7 +67,6 @@ $(function () {
 //Document Parser==================================================================
 $(function () {
     'use strict';
-
     var urlParams = new URLSearchParams(window.location.search);
     var urlFile = urlParams.get('filepath');
     docu_name = urlParams.get('filename');
@@ -75,6 +74,8 @@ $(function () {
 
     if (urlFile == null)
         return;
+
+    $('body').addClass('fusion');
 
     var filepath = urlFile.replace('files', '')
 
@@ -109,7 +110,7 @@ $(function () {
                 };
                 var renderTask = page.render(renderContext);
                 renderTask.promise.then(function () {
-                    $('body').removeClass('actload');
+
                 });
             });
         }
@@ -128,6 +129,7 @@ $(function () {
             url: '/docusign/get-signs-loc?filename=' + docu_name,
             responseType: 'json'
         }).then((response) => {
+            $('body').removeClass('fusion');
             if(response.data == null)
                 return;
             var sign_arr = JSON.parse(response.data.doc_signloc);
@@ -227,6 +229,9 @@ $(function () {
 
     //Save Copy Signed Docs
     window.save_signed_copy_docs = function () {
+        
+        $('body').addClass('fusion');
+
         var signs = document.querySelectorAll('.sign img');
         for (var i = 0; i < signs.length; i++) {
             $(signs[i]).attr("src", "/images/docusign/np-signature/sig_paulfortaleza.png");
@@ -266,10 +271,12 @@ $(function () {
                 url: '/docusign/save-file-to-server',
                 method: 'post',
                 headers: { 'Content-Type': 'multipart/form-data' },
-                data: fd
+                data: fd,
             }).then((response) => {
+                
+                $('body').removeClass('fusion');
                 if(response.data == "saved"){
-                    alert("Successfuly Saved");
+                swal ( "Saved" ,  "Successfuly Saved" , "success");
                 }
             });
 

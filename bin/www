@@ -10,8 +10,8 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 
-var pKey = fs.readFileSync('files/cert/fusion.key', 'utf8');
-var pCert = fs.readFileSync('files/cert/fusion.cert', 'utf8');
+var pKey = fs.readFileSync('files/cert/fusion.key');
+var pCert = fs.readFileSync('files/cert/fusion.cert');
 
 var credentials = { key: pKey, cert: pCert};
 

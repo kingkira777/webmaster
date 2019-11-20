@@ -6,8 +6,9 @@ var fs = require('fs');
 
 
 /* Docusign Login Page. */
-router.get('/login',function(req,res,next){
-    res.render('docusign/login',{title: 'Login'});
+router.get('/login?',function(req,res,next){
+    var failed = req.query.failed;
+    res.render('docusign/login',{title: 'Login', isFailed : failed});
     res.end();
 });
 
@@ -266,7 +267,7 @@ router.post('/login-user',function(req,res,next){
             res.redirect('/docusign');
             res.end();
         }else{
-            res.redirect('/docusign/login');
+            res.redirect('/docusign/login?failed='+ true);
             res.end();
         }
     });
