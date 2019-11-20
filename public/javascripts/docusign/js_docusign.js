@@ -2,9 +2,6 @@ displace = window.displacejs;
 window.docu_name = "";
 window.isSigned = false;
 
-
-
-
 //Tools============================================================================
 $(function () {
     'use strict';
@@ -56,12 +53,6 @@ $(function () {
 
 
 });
-
-
-
-
-
-
 
 
 //Document Parser==================================================================
