@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
             if(err){
                 console.log(err);
             }
-            res.render('docusign/index', { title: 'Docusign', doclist : rs});        
+            res.render('docusign/index', { title: 'Docusign', doclist : rs, accesslvl: req.session.accesslvl});        
         });
     }else{
         res.redirect('/docusign/login');

@@ -9,9 +9,10 @@ block content
                     .row
                         .col-sm-6
                             h4 Pending Documents
-                        .col-sm-6(align="right") 
-                            a(role="button" href="/docusign/signed-all").btn.btn-success.btn-sm.right
-                                i.fa.fa-pencil Sign All
+                        if(accesslvl == "admin" || accesslvl == "doctor")
+                            .col-sm-6(align="right") 
+                                a(role="button" href="/docusign/signed-all").btn.btn-success.btn-sm.right
+                                    i.fa.fa-pencil Sign All
                     
                 .card-body 
                     table#docu-table-list.table.table-stripped.table-hover 
