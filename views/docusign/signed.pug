@@ -1,6 +1,7 @@
-extends ../docusign_layout.pug 
+extends ../docusign_layout.pug
 
-block content 
+
+block content
 
     .row  
         .col-sm-12  
@@ -8,10 +9,8 @@ block content
                 .card-header 
                     .row
                         .col-sm-6
-                            h4 Pending Documents
-                        .col-sm-6(align="right") 
-                            a(role="button" href="/docusign/signed-all").btn.btn-success.btn-sm.right
-                                i.fa.fa-pencil Sign All
+                            h4 Singed Documents
+            
                     
                 .card-body 
                     table#docu-table-list.table.table-stripped.table-hover 
@@ -20,7 +19,7 @@ block content
                                 th Filename 
                                 th(style="width:150px;") Options
                         tbody
-                            each doc in doclist
+                            each doc in data
                                 tr 
                                     td=doc.doc_filename 
                                     td 
@@ -28,10 +27,3 @@ block content
                                             i.fa.fa-edit
                                         a(href="/docusign/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
                                             i.fa.fa-trash
-
-                .card-footer
-                    form(action="/docusign/upload-file" method="post" encType="multipart/form-data")
-                        input(type="file" name="file")
-                        button.btn.btn-primary.btn-sm 
-                            i.fa.fa-upload Upload
-                   
