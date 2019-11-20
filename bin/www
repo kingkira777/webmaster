@@ -19,7 +19,7 @@ var credentials = { key: pKey, cert: pCert};
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
@@ -29,7 +29,7 @@ app.set('port', port);
 var server = http.createServer(app).listen(port,function(){
   console.log('HTTP listening on port '+ port);
 });
-var httpsServer = https.createServer(credentials,app).listen(443,function(){
+var httpsServer = https.createServer(credentials,app).listen(4000,function(){
   console.log("HTTPS listening on port 443");
 });
 
