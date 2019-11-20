@@ -76,11 +76,7 @@ $(function () {
         return;
 
     $('body').addClass('fusion');
-
-    var filepath = urlFile.replace('files/', '');
-
-    console.log(filepath);
- 
+    var filepath = urlFile.replace('files', '');
     var loadingTask = pdfjsLib.getDocument(filepath);
     loadingTask.promise.then(function (pdf) {
         var pdf_container = document.getElementById('pdf-content');
