@@ -77,7 +77,9 @@ $(function () {
 
     $('body').addClass('fusion');
 
-    var filepath = urlFile.replace('files', '');
+    var filepath = urlFile.replace('files/', '');
+
+    console.log(filepath);
  
     var loadingTask = pdfjsLib.getDocument(filepath);
     loadingTask.promise.then(function (pdf) {
