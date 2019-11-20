@@ -11,8 +11,8 @@ var https = require('https');
 var fs = require('fs');
 
 var pKey = fs.readFileSync('files/cert/private.key');
-var pCert = fs.readFileSync('files/cert/certificate.cert');
-var pCa = fs.readFileSync('files/cert/ca_bundle.cert');
+var pCert = fs.readFileSync('files/cert/certificate.crt');
+var pCa = fs.readFileSync('files/cert/ca_bundle.crt');
 
 var credentials = { 
   key: pKey, 
