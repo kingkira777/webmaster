@@ -32,8 +32,9 @@ router.get('/', function(req, res, next) {
 
 //Open PDF File
 router.get('/open-file?',function(req,res,next){
-    var path = req.query.path;
-    fs.readFile(path,function(err,data){
+    var filename = req.query.filename;
+    var filepath = 'files/docusign/signed/'+ req.session.branch+"/"+filename;
+    fs.readFile(filepath,function(err,data){
         res.contentType("application/pdf");
         res.send(data);
     });

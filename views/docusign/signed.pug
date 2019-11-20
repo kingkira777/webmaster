@@ -23,7 +23,7 @@ block content
                                 tr 
                                     td=doc.doc_filename 
                                     td 
-                                        a(href="/docusign/open-file?path="+doc.doc_path).btn.btn-primary.btn-sm.btn-round 
+                                        a(href="/docusign/open-file?filename="+doc.doc_name).btn.btn-primary.btn-sm.btn-round 
                                             | Open
                                         a(href="/docusign/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path).btn.btn-primary.btn-sm.btn-round 
                                             | Edit
