@@ -77,7 +77,7 @@ $(function () {
 
     $('body').addClass('fusion');
 
-    var filepath =  "https://hospicefusion.com/" + urlFile.replace('files', '');
+    var filepath = urlFile.replace('files', '');
  
     var loadingTask = pdfjsLib.getDocument(filepath);
     loadingTask.promise.then(function (pdf) {
