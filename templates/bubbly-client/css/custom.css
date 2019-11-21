@@ -11,7 +11,7 @@
     z-index: 111;
 }
 
-
+/* Sign Menu */
 #docu_right_menu{
     position: fixed;
     top: 10;
@@ -21,6 +21,11 @@
     border: solid 1px black;
 }
 
+/*Close Sign*/
+.closeSing{ display:none; }
+.sign:hover .closeSing{ display:block }
+
+/* Loading Status */
 .fusion-loading{
     display:    none;
     position:   fixed;
