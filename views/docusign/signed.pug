@@ -17,15 +17,18 @@ block content
                         thead 
                             tr  
                                 th Filename 
-                                th(style="width:300px;") Options
+                                th(style="width:100px;") Signed Date
+                                th(style="width:210px;") Options
                         tbody
                             each doc in data
                                 tr 
                                     td=doc.doc_filename 
-                                    td 
-                                        a(href="/docusign/open-file?filename="+doc.doc_name).btn.btn-primary.btn-sm.btn-round 
-                                            | Open
+                                    td=doc.doc_signdate
+                                    td
+                                        a(href="/docusign/open-file?filename="+doc.doc_name).btn.btn-success.btn-sm.btn-round 
+                                            i.fa.fa-download
                                         a(href="/docusign/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path).btn.btn-primary.btn-sm.btn-round 
-                                            | Edit
+                                            i.fa.fa-edit
                                         a(href="/docusign/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
-                                            | Delete
+                                            i.fa.fa-trash
+                                        
