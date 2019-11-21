@@ -45,7 +45,7 @@ router.get('/open-file?',function(req,res,next){
 //Get Signed Docs
 router.get('/signed-docs',function(req,res,next){
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
 
     var sql = `SELECT * FROM docusign WHERE  doc_sign = 'true' AND doc_branch = ? 
         ORDER BY doc_id DESC`;
@@ -76,7 +76,7 @@ router.get('/open-document?',function(req,res,next){
 router.get('/get-signs-loc?',function(req,res,next){
 
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
 
     var filename = req.query.filename;
     var sql = `SELECT * FROM docusign WHERE doc_name = ? AND doc_branch = ?`;
@@ -93,7 +93,8 @@ router.get('/get-signs-loc?',function(req,res,next){
 //Delete Docu 
 router.get('/delete-doc?', function(req,res,next){
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
+
 
     var filename = req.query.filename;
     var path = req.query.path;
@@ -123,7 +124,8 @@ router.get('/delete-doc?', function(req,res,next){
 //Signed All
 router.get('/signed-all',function(req,res,next){
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
+
     var sql = `UPDATE docusign SET doc_sign = 'true', doc_signdate = ? WHERE (doc_sign IS NULL OR doc_sign = "") AND doc_branch = ?`;
     con.query(sql,[master.get_currentdate(), req.session.branch],function(err,rs){
         if(err){
@@ -138,7 +140,7 @@ router.get('/signed-all',function(req,res,next){
 router.post('/single-signed',function(req,res,next){
     
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
 
     var filename = req.body.filename;
     var sql = `UPDATE docusign SET doc_sign = 'true', doc_signdate = ? WHERE doc_name = ? AND doc_branch = ?`;
@@ -160,7 +162,8 @@ router.post('/single-signed',function(req,res,next){
 router.post('/save-sign-loc',function(req,res,next){
 
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
+
 
     var filename = req.body.filename;
     var signloc = req.body.signloc;
@@ -183,7 +186,7 @@ router.post('/save-sign-loc',function(req,res,next){
 router.post('/save-file-to-server',function(req,res,next){
 
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
 
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).send('No files were uploaded.');
@@ -213,7 +216,7 @@ router.post('/save-file-to-server',function(req,res,next){
 /*Upload Files ==================================*/
 router.post('/upload-file',function(req,res,next){
     if(!req.session.branch)
-        return;
+        res.redirect('/docusign/login');
     
 
     if (!req.files || Object.keys(req.files).length === 0) {
@@ -279,6 +282,7 @@ router.post('/login-user',function(req,res,next){
 router.get('/logout',function(req,res,next){
     if(!req.session.branch)
         return;
+
     if(req.session.destroy()){
         res.redirect('/docusign/login');
         res.end();
