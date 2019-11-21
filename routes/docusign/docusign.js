@@ -16,7 +16,8 @@ router.get('/login?',function(req,res,next){
 /* Docusign Home page NOT Signed. */
 router.get('/', function(req, res, next) {  
     if(req.session.branch){
-        var sql = `SELECT * FROM docusign WHERE doc_branch = ? AND (doc_sign IS NULL OR doc_sign = '')`;
+        var sql = `SELECT * FROM docusign WHERE doc_branch = ? AND (doc_sign IS NULL OR doc_sign = '') 
+            ORDER BY doc_id DESC`;
         con.query(sql,[req.session.branch],function(err,rs){
             if(err){
                 console.log(err);
@@ -46,7 +47,8 @@ router.get('/signed-docs',function(req,res,next){
     if(!req.session.branch)
         return;
 
-    var sql = `SELECT * FROM docusign WHERE  doc_sign = 'true' AND doc_branch = ? `;
+    var sql = `SELECT * FROM docusign WHERE  doc_sign = 'true' AND doc_branch = ? 
+        ORDER BY doc_id DESC`;
     con.query(sql,[req.session.branch],function(err,rs){
         if(err){
             console.log(err);
