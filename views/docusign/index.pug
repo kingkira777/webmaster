@@ -18,11 +18,13 @@ block content
                     table#docu-table-list.table.table-stripped.table-hover 
                         thead 
                             tr  
+                                th ID
                                 th Filename 
                                 th(style="width:150px;") Options
                         tbody
                             each doc in doclist
                                 tr 
+                                    td=doc.doc_id
                                     td=doc.doc_filename 
                                     td 
                                         a(href="/docusign/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path).btn.btn-primary.btn-sm.btn-round 

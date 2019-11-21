@@ -49,5 +49,13 @@ html
 
     script. 
       $(document).ready( function () {
-          $('#docu-table-list').DataTable();
+          $('#docu-table-list').DataTable({
+            order : [[0, 'desc']],
+            columnDefs : [
+              {
+                targets : [0],
+                visible : false
+              } 
+            ]
+          });
       });

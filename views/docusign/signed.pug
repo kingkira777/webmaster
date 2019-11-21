@@ -16,12 +16,14 @@ block content
                     table#docu-table-list.table.table-stripped.table-hover 
                         thead 
                             tr  
+                                th ID
                                 th Filename 
                                 th(style="width:100px;") Signed Date
                                 th(style="width:210px;") Options
                         tbody
                             each doc in data
                                 tr 
+                                    td=doc.doc_id
                                     td=doc.doc_filename 
                                     td=doc.doc_signdate
                                     td
