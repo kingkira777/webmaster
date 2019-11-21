@@ -124,8 +124,8 @@ router.get('/delete-doc?', function(req,res,next){
 router.get('/signed-all',function(req,res,next){
     if(!req.session.branch)
         return;
-    var sql = `UPDATE docusign SET doc_sign = 'true' WHERE (doc_sign IS NULL OR doc_sign = "") AND doc_branch = ?`;
-    con.query(sql,[req.session.branch],function(err,rs){
+    var sql = `UPDATE docusign SET doc_sign = 'true', doc_signdate = ? WHERE (doc_sign IS NULL OR doc_sign = "") AND doc_branch = ?`;
+    con.query(sql,[master.get_currentdate(), req.session.branch],function(err,rs){
         if(err){
             console.log(err);
         }
@@ -141,8 +141,8 @@ router.post('/single-signed',function(req,res,next){
         return;
 
     var filename = req.body.filename;
-    var sql = `UPDATE docusign SET doc_sign = 'true' WHERE doc_name = ? AND doc_branch = ?`;
-    var sql_val = [filename, req.session.branch];
+    var sql = `UPDATE docusign SET doc_sign = 'true', doc_signdate = ? WHERE doc_name = ? AND doc_branch = ?`;
+    var sql_val = [master.get_currentdate(), filename, req.session.branch];
     con.query(sql,sql_val,function(err,rs){
         if(err){
             console.log(err);
