@@ -1,0 +1,166 @@
+doctype html 
+html
+    head 
+        meta(charset="utf-8")
+        title=title
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="")
+        meta(name="author" content="")
+
+        //- Style
+        link(href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet")
+        link(href="/serenity/assets/css/bootstrap.css" rel="stylesheet")
+        link(href="/serenity/assets/css/bootstrap-responsive.css" rel="stylesheet")
+        link(href="/serenity/assets/css/docs.css" rel="stylesheet")
+        link(href="/serenity/assets/css/prettyPhoto.css" rel="stylesheet")
+        link(href="/serenity/assets/js/google-code-prettify/prettify.css" rel="stylesheet")
+        link(href="/serenity/assets/css/flexslider.css" rel="stylesheet")
+        link(href="/serenity/assets/css/sequence.css" rel="stylesheet")
+        link(href="/serenity/assets/css/style.css" rel="stylesheet")
+        link(href="/serenity/assets/color/default.css" rel="stylesheet")
+
+        //- fav and touch icons
+        link(rel="shortcut icon" href="/serenity/assets/ico/favicon.ico")
+        link(rel="apple-touch-icon-precomposed" sizes="144x144" href="/serenity/assets/ico/apple-touch-icon-144-precomposed.png")
+        link(rel="apple-touch-icon-precomposed" sizes="114x114" href="/serenity/assets/ico/apple-touch-icon-114-precomposed.png")
+        link(rel="apple-touch-icon-precomposed" sizes="72x72" href="/serenity/assets/ico/apple-touch-icon-72-precomposed.png")
+        link(rel="apple-touch-icon-precomposed" href="/serenity/assets/ico/apple-touch-icon-57-precomposed.png")
+      
+
+    body    
+
+        header
+            include front-web/_header.pug
+
+        
+        section#intro
+            .jumbotron.masthead
+                .container
+                    // slider navigation
+                    .sequence-nav
+                        .prev
+                            span
+                        .next
+                            span
+                    // end slider navigation
+                    .row
+                        .span12
+                            #slider_holder
+                                #sequence
+                                    ul
+                                        // Layer 1
+                                        li
+                                            .info.animate-in
+                                                h2 Bootstrap based
+                                                br
+                                                h3 Corporate business
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img.animate-in(src='/serenity/assets/img/slides/sequence/img-1.png', alt='')
+                                        // Layer 2
+                                        li
+                                            .info
+                                                h2 Smart and fresh
+                                                br
+                                                h3 Rich of features
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-2.png', alt='')
+                                        // Layer 3
+                                        li
+                                            .info
+                                                h2 Far from ugly
+                                                br
+                                                h3 Latest technology
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-3.png', alt='')
+
+
+
+        section#maincontent
+            .container
+                .row 
+                    block content
+
+        footer.footer
+            .container
+                .row
+                    .span4
+                        .widget
+                            h5 c
+                            ul.regular
+                                li
+                                    a(href='#') Work for us
+                                li
+                                    a(href='#') Creative process
+                                li
+                                    a(href='#') Case study
+                                li
+                                    a(href='#') Scaffold awwards
+                                li
+                                    a(href='#') Meet the team
+                    .span4
+                        .widget
+                            h5 Recent blog posts
+                            ul.regular
+                                li
+                                    a(href='#') Lorem ipsum dolor sit amet
+                                li
+                                    a(href='#') Mea malis nominavi insolens ut
+                                li
+                                    a(href='#') Minim timeam has no aperiri sanctus ei mea per pertinax
+                                li
+                                    a(href='#') Te malorum dignissim eos quod sensibus
+                    .span4
+                        .widget
+                            // logo
+                            a.brand.logo(href='index.html')
+                                img(src='assets/img/logo-dark.png', alt='')
+                            // end logo
+                            address
+                                strong Registered Companyname, Inc.
+                                br
+                                | 							 8895 Somename Ave, Suite 600
+                                br
+                                | 							 San Francisco, CA 94107
+                                br
+                                abbr(title='Phone') P:
+                                |  (123) 456-7890
+            .verybottom
+                .container
+                    .row
+                        .span6
+                            p
+                                | © Serenity - All right reserved
+                        .span6
+                            .credits
+                                //
+                                    All the links in the footer should remain intact.
+                                    You can delete the links only if you purchased the pro version.
+                                    Licensing information: https://bootstrapmade.com/license/
+                                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
+                                | Designed by 
+                                a(href='https://bootstrapmade.com/') BootstrapMade
+
+
+        //- JavaScript Library Files 
+        script(src="/serenity/assets/js/jquery.min.js")
+        script(src="/serenity/assets/js/jquery.easing.js")
+        script(src="/serenity/assets/js/google-code-prettify/prettify.js")
+        script(src="/serenity/assets/js/modernizr.js")
+        script(src="/serenity/assets/js/bootstrap.js")
+        script(src="/serenity/assets/js/jquery.elastislide.js")
+        script(src="/serenity/assets/js/sequence/sequence.jquery-min.js")
+        script(src="/serenity/assets/js/sequence/setting.js")
+        script(src="/serenity/assets/js/jquery.prettyPhoto.js")
+        script(src="/serenity/assets/js/application.js")
+        script(src="/serenity/assets/js/jquery.flexslider.js")
+        script(src="/serenity/assets/js/hover/jquery-hover-effect.js")
+        script(src="/serenity/assets/js/hover/setting.js")
+
+        //- Template Custom JavaScript File 
+        script(src="/serenity/assets/js/custom.js")

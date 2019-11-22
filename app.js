@@ -7,9 +7,7 @@ var logger = require('morgan');
 var session = require('express-session');
 
 //Include Router
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+var frontWebRouter = require('./routes/front-web/index');
 var docusignRouter = require('./routes/docusign/docusign');
 
 var app = express();
@@ -38,8 +36,7 @@ app.use(session({
 
 
 //Re- Routing
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', frontWebRouter);
 app.use('/docusign',  docusignRouter);
 
 // catch 404 and forward to error handler
