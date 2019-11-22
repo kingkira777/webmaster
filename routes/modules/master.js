@@ -9,12 +9,12 @@ var master = {
     send_email : function(){
 
         var transporter = nodemailer.createTransport({
-            host : 'smtp.gmail.com',
+            host : 'hospicefusion.com',
             port : '465',
             secure: true,
             auth:{
-                user : 'hsouleater@gmail.com',
-                pass: 'gaaruto16!'
+                user : 'support@hospicefusion.com',
+                pass: '*fusion777!'
             }
         });
 
