@@ -10,8 +10,8 @@ var master = {
 
         var transporter = nodemailer.createTransport({
             host : 'hospicefusion.com',
+            secureConnection : true,
             port : '465',
-            secure: true,
             auth:{
                 user : 'support@hospicefusion.com',
                 pass: '*fusion777!'
