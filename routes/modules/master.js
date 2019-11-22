@@ -5,15 +5,13 @@ const nodemailer = require('nodemailer');
 var master = {  
 
     //Send Email
-
     send_email : function(){
-
         var transporter = nodemailer.createTransport({
             host : 'hospicefusion.com',
             secureConnection : true,
             port : '465',
             auth:{
-                user : 'support@hospicefusion.com',
+                user: 'support@hospicefusion.com',
                 pass: '*fusion777!'
             }
         });
@@ -55,7 +53,6 @@ var master = {
     }
 
 };
-
 
 
 module.exports =  master;

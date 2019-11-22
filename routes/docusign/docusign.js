@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
             if(err){
                 console.log(err);
             }
-            res.render('docusign/index', { title: 'Docusign', doclist : rs, accesslvl: req.session.accesslvl});        
+            res.render('docusign/index', { title: 'Docusign', doclist : rs, accesslvl: req.session.accesslvl, pending: 'active'});        
         });
     }else{
         res.redirect('/docusign/login');
@@ -53,7 +53,7 @@ router.get('/signed-docs',function(req,res,next){
         if(err){
             console.log(err);
         }
-        res.render('docusign/signed',{title : 'Signed Docs', data : rs});
+        res.render('docusign/signed',{title : 'Signed Docs', data : rs, signed: 'active'});
         res.end();
     });
 
