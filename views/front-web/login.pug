@@ -1,0 +1,46 @@
+extends ../front_layout.pug 
+
+
+block content
+
+    section#intro
+
+    section#maincontent
+            .container
+                .row-fluid
+                    .span6
+                        aside 
+                            .widget
+                                h4 Login
+                                form(action="#" method="post")
+                                    label(for="email") Email 
+                                    input(type="email" placeholder="example@gmail.com" name="email" style="width:98%" required).form-control
+                                    label(for="password") Password
+                                    input(type="password" placeholder="password" name="password" style="width:98%" required).form-control
+                                    
+                                    .clearfix
+                                    button(type="submit").btn.btn-primary.pull-right
+                                        | Login
+                                    .clearfix
+
+                    .span6 
+                        aside
+                            .widget
+                                h4 Register 
+                                form(action="#" method="post")
+                                    label(for="email") Email Address 
+                                    input(type="email" name="email" placeholder="example@gmail.com" style="width:98%" required)
+                                    label(for="company") Company Name 
+                                    input(type="text" name="company" placeholder="Company Name" style="width:98%" required)
+                                    .row-fluid
+                                        .span6
+                                            label(for="email") Password 
+                                            input(type="password" name="password" placeholder="Password" style="width:98%" required)
+                                        .span6
+                                            label(for="email") Retype Password 
+                                            input(type="password" name="repassword" placeholder="Retype Password" style="width:98%" required)
+
+                                    .clearfix
+                                    button(type="submit").btn.btn-success.pull-right
+                                        | Register
+                                    .clearfix

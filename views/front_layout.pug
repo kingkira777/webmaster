@@ -33,65 +33,17 @@ html
             include front-web/_header.pug
 
         
-        section#intro
-            .jumbotron.masthead
-                .container
-                    // slider navigation
-                    .sequence-nav
-                        .prev
-                            span
-                        .next
-                            span
-                    // end slider navigation
-                    .row
-                        .span12
-                            #slider_holder
-                                #sequence
-                                    ul
-                                        // Layer 1
-                                        li
-                                            .info.animate-in
-                                                h2 Bootstrap based
-                                                br
-                                                h3 Corporate business
-                                                p
-                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
-                                                a.btn.btn-success(href='#') Learn more »
-                                            img.slider_img.animate-in(src='/serenity/assets/img/slides/sequence/img-1.png', alt='')
-                                        // Layer 2
-                                        li
-                                            .info
-                                                h2 Smart and fresh
-                                                br
-                                                h3 Rich of features
-                                                p
-                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
-                                                a.btn.btn-success(href='#') Learn more »
-                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-2.png', alt='')
-                                        // Layer 3
-                                        li
-                                            .info
-                                                h2 Far from ugly
-                                                br
-                                                h3 Latest technology
-                                                p
-                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
-                                                a.btn.btn-success(href='#') Learn more »
-                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-3.png', alt='')
+        
+        block content
 
-
-
-        section#maincontent
-            .container
-                .row 
-                    block content
+        
 
         footer.footer
             .container
                 .row
                     .span4
                         .widget
-                            h5 c
+                            h5 Browse pages
                             ul.regular
                                 li
                                     a(href='#') Work for us
@@ -118,8 +70,8 @@ html
                     .span4
                         .widget
                             // logo
-                            a.brand.logo(href='index.html')
-                                img(src='assets/img/logo-dark.png', alt='')
+                            a.brand.logo(href='#')
+                                img(src='/serenity/assets/img/hospicefusion.png', alt='')
                             // end logo
                             address
                                 strong Registered Companyname, Inc.
@@ -128,14 +80,14 @@ html
                                 br
                                 | 							 San Francisco, CA 94107
                                 br
-                                abbr(title='Phone') P:
+                                abbr(title='Phone') PHONE:
                                 |  (123) 456-7890
             .verybottom
                 .container
                     .row
                         .span6
                             p
-                                | © Serenity - All right reserved
+                                | © Hospice Fusion - All right reserved
                         .span6
                             .credits
                                 //

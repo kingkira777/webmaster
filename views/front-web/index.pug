@@ -1,3 +1,55 @@
 extends ../front_layout.pug 
 
 block content
+
+
+    section#intro
+            .jumbotron.masthead
+                .container
+                    // slider navigation
+                    .sequence-nav
+                        .prev
+                            span
+                        .next
+                            span
+                    // end slider navigation
+                    .row
+                        .span12
+                            #slider_holder
+                                #sequence
+                                    ul
+                                        // Layer 1
+                                        li
+                                            .info.animate-in
+                                                h2 Bootstrap based
+                                                br
+                                                h3 Corporate business
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img.animate-in(src='/serenity/assets/img/slides/sequence/img-1.png', alt='')
+                                        // Layer 2
+                                        li
+                                            .info
+                                                h2 Smart and fresh
+                                                br
+                                                h3 Rich of features
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-2.png', alt='')
+                                        // Layer 3
+                                        li
+                                            .info
+                                                h2 Far from ugly
+                                                br
+                                                h3 Latest technology
+                                                p
+                                                    | Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                                                a.btn.btn-success(href='#') Learn more »
+                                            img.slider_img(src='/serenity/assets/img/slides/sequence/img-3.png', alt='')
+
+
+    section#maincontent
+            .container
+                .row 

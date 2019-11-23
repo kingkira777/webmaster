@@ -9,6 +9,12 @@ router.get('/',function(req,res,next){
 });
 
 
+router.get('/login',function(req,res,next){
+    res.render('front-web/login',{ title : 'Login' });
+    res.end();    
+});
+
+
 
 
 
