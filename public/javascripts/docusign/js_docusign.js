@@ -225,11 +225,8 @@ $(function () {
             $(signs[i]).attr("src", "/images/docusign/np-signature/sig_paulfortaleza.png");
         }
 
-
         var fd = new FormData();
-
         var container_height = $('#pdf-content').height();
-
         var canvas_width = $('canvas').width();
         var canvas_height = $('canvas').height();
 
@@ -244,7 +241,7 @@ $(function () {
             var height = pdf.internal.pageSize.height;
             var pageHeight = height * totalPages;
 
-            pdf.addImage(imgData, 'JPEG', 0, -25, width, pageHeight);
+            pdf.addImage(imgData, 'JPEG', 0, 0, width, pageHeight);
 
             for (var i = 1; i < totalPages; i++) {
                 pdf.addPage('p', 'pt', 'a4');
