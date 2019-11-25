@@ -22,7 +22,10 @@
 }
 
 /*Close Sign*/
-.closeSing{ display:none; }
+.closeSing{ 
+    float: right;
+    display:none; 
+}
 .sign:hover .closeSing{ display:block }
 
 /* Loading Status */
