@@ -9,9 +9,9 @@
             .navigation
                 nav
                     ul.nav.topnav
-                        li.dropdown.active
+                        li.dropdown(class=(isHome)? 'active' : '')
                             a(href='/') Home
-                        li
+                        li(class=(isAbout)? 'active' : '')
                             a(href='/about') About
                         li.dropdown
                             a(href='#') Features
@@ -23,10 +23,10 @@
                                 li
                                     a(href='#') Hospice Item Set (HIS)
                                 
-                        li
+                        li(class=(isContact)? 'active' : '')
                             a(href='/contact') Contact
                        
-                        li
+                        li(class=(isLogin)? 'active' : '')
                             a(href='/login')
                                 | Login     
                                 i.icon-circled.icon-signin

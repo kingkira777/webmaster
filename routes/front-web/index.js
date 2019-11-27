@@ -7,27 +7,27 @@ var con = require('../modules/connection');
 
 //Home Page 
 router.get('/',function(req,res,next){
-    res.render('front-web/index',{title: 'Hospice Fusion'});
+    res.render('front-web/index',{title: 'Hospice Fusion', isHome :true});
     res.end();
 });
 
 
 //Contact Page
 router.get('/contact', function(req,res,next){
-    res.render('front-web/contact',{ title : 'Contact'});
+    res.render('front-web/contact',{ title : 'Contact', isContact :true});
     res.end();
 });
 
 //About Page
 router.get('/about',function(req,res,next){
-    res.render('front-web/about', { tilte : 'About' })
+    res.render('front-web/about', { tilte : 'About', isAbout :true })
 });
 
 
 //Login & Regiser Page
 router.get('/login?',function(req,res,next){
     var status = req.query.status;
-    res.render('front-web/login',{ title : 'Login', status: status });
+    res.render('front-web/login',{ title : 'Login', status: status, isLogin :true });
     res.end();    
 });
 
