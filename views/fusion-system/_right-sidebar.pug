@@ -1,0 +1,297 @@
+.sidebar.sidebar-right.sidebar-animate
+    .tab-menu-heading.siderbar-tabs.border-0
+        .tabs-menu
+            // Tabs
+            ul.nav.panel-tabs
+                li
+                    a.active(href='#tab', data-toggle='tab') Profile
+                li
+                    a(href='#tab1', data-toggle='tab') Chat
+                li
+                    a(href='#tab2', data-toggle='tab') Activity
+                li
+                    a(href='#tab3', data-toggle='tab') Todo
+    .panel-body.tabs-menu-body.side-tab-body.p-0.border-0
+        .tab-content.border-top
+            #tab.tab-pane.active
+                .card-body.p-0
+                    .header-user.text-center.mt-4.pb-4
+                        span.avatar.avatar-xxl.brround
+                            img.avatar.avatar-xxl.brround(src='/system/assets/images/users/female/33.png', alt='Profile-img')
+                        .dropdown-item.text-center.font-weight-semibold.user.h3.mb-0 Alison
+                        small Web Designer
+                        .card-body
+                            .form-group
+                                label.form-label.text-left Offline/Online
+                                select.form-control.select2(data-placeholder='Choose one')
+                                    option(label='Choose one')
+                                    option(value='1') Online
+                                    option(value='2') Offline
+                            .form-group
+                                label.form-label.text-left Website
+                                select.form-control.select2(data-placeholder='Choose one')
+                                    option(label='Choose one')
+                                    option(value='1') Spruko.com
+                                    option(value='2') sprukosoft.com
+                                    option(value='3') sprukotechnologies.com
+                                    option(value='4') sprukoinfo.com
+                                    option(value='5') sprukotech.com
+                    a.dropdown-item.border-top(href='#')
+                        i.dropdown-icon.mdi.mdi-account-outline
+                        |  Spruko technologies
+                    a.dropdown-item.border-top(href='#')
+                        i.dropdown-icon.mdi.mdi-account-plus
+                        |  Add another Account
+                    .card-body.border-top
+                        .row
+                            .col-4.text-center
+                                a(href='')
+                                    i.dropdown-icon.mdi.mdi-message-outline.fs-30.m-0.leading-tight
+                                div Inbox
+                            .col-4.text-center
+                                a(href='')
+                                    i.dropdown-icon.mdi.mdi-tune.fs-30.m-0.leading-tight
+                                div Settings
+                            .col-4.text-center
+                                a(href='')
+                                    i.dropdown-icon.mdi.mdi-logout-variant.fs-30.m-0.leading-tight
+                                div Sign out
+            #tab1.tab-pane
+                .chat
+                    .contacts_card
+                        .input-group.p-3
+                            input.form-control.search(type='text', placeholder='Search...')
+                            .input-group-prepend
+                                span.input-group-text.search_btn
+                                    i.fa.fa-search
+                        ul.contacts.mb-0
+                            li.active
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/male/3.jpg', alt='img')
+                                        span.online_icon
+                                    .user_info
+                                        h6.mt-1.mb-0 Maryam Naz
+                                        small.text-muted Maryam is online
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 01-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/female/1.jpg', alt='img')
+                                    .user_info
+                                        h6.mt-1.mb-0 Sahar Darya
+                                        small.text-muted Sahar left 7 mins ago
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 01-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/female/9.jpg', alt='img')
+                                        span.online_icon
+                                    .user_info
+                                        h6.mt-1.mb-0 Maryam Naz
+                                        small.text-muted Maryam is online
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 01-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/female/12.jpg', alt='img')
+                                    .user_info
+                                        h6.mt-1.mb-0 Yolduz Rafi
+                                        small.text-muted Yolduz is online
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 02-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/male/15.jpg', alt='img')
+                                        span.online_icon
+                                    .user_info
+                                        h6.mt-1.mb-0 Nargis Hawa
+                                        small.text-muted Nargis left 30 mins ago
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 02-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/male/17.jpg', alt='img')
+                                        span.online_icon
+                                    .user_info
+                                        h6.mt-1.mb-0 Khadija Mehr
+                                        small.text-muted Khadija left 50 mins ago
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 03-02-2019
+                            li
+                                .d-flex.bd-highlight
+                                    .img_cont
+                                        img.rounded-circle.user_img(src='/system/assets/images/users/female/18.jpg', alt='img')
+                                    .user_info
+                                        h6.mt-1.mb-0 Khadija Mehr
+                                        small.text-muted Khadija left 50 mins ago
+                                    .float-right.text-right.ml-auto.mt-auto.mb-auto
+                                        small 03-02-2019
+            #tab2.tab-pane
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-primary.brround.avatar-md CH
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b New Websites is Created
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 30 mins ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-danger.brround.avatar-md N
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Prepare For the Next Project
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 2 hours ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-info.brround.avatar-md S
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Decide the live Discussion Time
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 3 hours ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-warning.brround.avatar-md K
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Team Review meeting at yesterday at 3:00 pm
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 4 hours ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-success.brround.avatar-md R
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Prepare for Presentation
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 1 days ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-pink.brround.avatar-md MS
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Prepare for Presentation
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 1 days ago
+                                p.mb-0
+                .list.d-flex.align-items-center.border-bottom.p-4
+                    div
+                        span.avatar.bg-purple.brround.avatar-md L
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Prepare for Presentation
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 45 mintues ago
+                                p.mb-0
+                .list.d-flex.align-items-center.p-4
+                    div
+                        span.avatar.bg-blue.brround.avatar-md U
+                    .wrapper.w-100.ml-3
+                        p.mb-0.d-flex
+                            b Prepare for Presentation
+                        .d-flex.justify-content-between.align-items-center
+                            .d-flex.align-items-center
+                                i.mdi.mdi-clock.text-muted.mr-1
+                                small.text-muted.ml-auto 2 days ago
+                                p.mb-0
+            #tab3.tab-pane
+                div
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox1', value='option1', checked='')
+                            span.custom-control-label Do Even More..
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox2', value='option2', checked='')
+                            span.custom-control-label Find an idea.
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox3', value='option3', checked='')
+                            span.custom-control-label Hangout with friends
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox4', value='option4')
+                            span.custom-control-label Do Something else
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox5', value='option5')
+                            span.custom-control-label Eat healthy, Eat Fresh..
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox6', value='option6', checked='')
+                            span.custom-control-label Finsh something more..
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox7', value='option7', checked='')
+                            span.custom-control-label Do something more
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox8', value='option8')
+                            span.custom-control-label Updated more files
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox9', value='option9')
+                            span.custom-control-label System updated
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .d-flex.p-3.border-top.border-bottom
+                        label.custom-control.custom-checkbox.mb-0
+                            input.custom-control-input(type='checkbox', name='example-checkbox10', value='option10')
+                            span.custom-control-label Settings Changings...
+                        span.ml-auto
+                            i.si.si-pencil.text-primary.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Edit')
+                            i.si.si-trash.text-danger.mr-2(data-toggle='tooltip', title='', data-placement='top', data-original-title='Delete')
+                    .text-center.pt-5
+                        a.btn.btn-primary.btn-pill(href='#') Upgrade more

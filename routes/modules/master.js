@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-
+const bcrypt = require('bcryptjs');
+const uuidV4 = require('uuid/v4');
 
 var master = {  
 
@@ -50,7 +51,36 @@ var master = {
     // Return  value 'd5be8583137b'
     randomValuesHex : function(len){
         return crypto.randomBytes(Math.ceil(len)).toString('hex').slice(0,len);
+    },
+
+    //Unique Cliend ID
+    generate_cliend_no : function(){
+        return uuidV4();
+    },
+
+    //===============PASSWORD HASHING====================//
+    hash_password : function(password){
+        return new Promise((resolve)=>{
+            bcrypt.genSalt(10,function(err,salt){
+                bcrypt.hash(password,salt,function(err,hash){
+                    resolve(hash);
+                });
+            });
+        });
+    },
+
+    compare_password : function(password, hash){
+        return new Promise((resolve)=>{
+            bcrypt.compare(password,hash,function(err,res){
+                resolve(res);
+            });
+        });
     }
+    //===============PASSWORD HASHING====================//
+    
+
+
+
 
 };
 

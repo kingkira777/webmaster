@@ -12,7 +12,10 @@ block content
                         aside 
                             .widget
                                 h4 Login
-                                form(action="#" method="post")
+                                if(status == "4") 
+                                    .alert.alert-warning
+                                        | Invalid Crendentials
+                                form(action="/login-user" method="post")
                                     label(for="email") Email 
                                     input(type="email" placeholder="example@gmail.com" name="email" style="width:98%" required).form-control
                                     label(for="password") Password
@@ -26,8 +29,20 @@ block content
                     .span6 
                         aside
                             .widget
-                                h4 Register 
-                                form(action="#" method="post")
+                                h4 Register
+                                if(status == "0") 
+                                    .alert.alert-success
+                                        | Successfuly Registered!
+                                if(status == "1") 
+                                    .alert.alert-info
+                                        | Password not Mathced!
+                                if(status == "2") 
+                                    .alert.alert-info
+                                        | Registration Failed, Please try again later
+                                if(status == "3") 
+                                    .alert.alert-warning
+                                        | Email Address Already Registered!
+                                form(action="/register-user" method="post")
                                     label(for="email") Email Address 
                                     input(type="email" name="email" placeholder="example@gmail.com" style="width:98%" required)
                                     label(for="company") Company Name 

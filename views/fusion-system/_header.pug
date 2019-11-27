@@ -1,0 +1,104 @@
+.app-header.header.hor-topheader.d-flex
+    .container
+        .d-flex
+            a.header-brand(href='/hfusion')
+                img.header-brand-img.main-logo(src='/system/assets/images/brand/logo.png', alt='Hogo logo')
+                img.header-brand-img.icon-logo(src='/system/assets/images/brand/icon.png', alt='Hogo logo')
+            // logo
+            a#horizontal-navtoggle.animated-arrow.hor-toggle
+                span
+            a.nav-link.nav-link.navsearch(href='#', data-toggle='search')
+                i.fa.fa-search
+            // search icon
+            .header-form
+                form.form-inline
+                    .search-element.mr-3
+                        input.form-control(type='search', placeholder='Search', aria-label='Search')
+                        span.Search-icon
+                            i.fa.fa-search
+                // search-bar
+            //- Settings
+            //- ul.nav.header-nav
+            //-     li.nav-item.dropdown.header-option.m-2
+            //-         a.nav-link.dropdown-toggle(data-toggle='dropdown', href='#', role='button', aria-haspopup='true', aria-expanded='false')
+            //-             i.fe.fe-settings.mr-2
+            //-             | Settings
+            //-         .dropdown-menu.dropdown-menu-left
+            //-             a.dropdown-item(href='#') Option 1
+            //-             a.dropdown-item(href='#') Option 2
+            //-             a.dropdown-item(href='#') Option 3
+            //-             a.dropdown-item(href='#') Option 4
+            //-             a.dropdown-item(href='#') Option 5
+            .d-flex.order-lg-2.ml-auto.header-rightmenu
+                //- .dropdown
+                //-     a#fullscreen-button.nav-link.icon.full-screen-link
+                //-         i.fe.fe-maximize-2
+                // full-screen
+                .dropdown.header-notify
+                    a.nav-link.icon(data-toggle='dropdown', aria-expanded='false')
+                        i.fe.fe-bell
+                        span.pulse.bg-success
+                    .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+                        a.dropdown-item.text-center(href='#') 4 New Notifications
+                        .dropdown-divider
+                        a.dropdown-item.d-flex.pb-3(href='#')
+                            .notifyimg.bg-green
+                                i.fe.fe-mail
+                            div
+                                strong Message Sent.
+                                .small.text-muted 12 mins ago
+                        a.dropdown-item.d-flex.pb-3(href='#')
+                            .notifyimg.bg-pink
+                                i.fe.fe-shopping-cart
+                            div
+                                strong Order Placed
+                                .small.text-muted 2 hour ago
+                        a.dropdown-item.d-flex.pb-3(href='#')
+                            .notifyimg.bg-blue
+                                i.fe.fe-calendar
+                            div
+                                strong  Event Started
+                                .small.text-muted 1 hour ago
+                        a.dropdown-item.d-flex.pb-3(href='#')
+                            .notifyimg.bg-orange
+                                i.fe.fe-monitor
+                            div
+                                strong Your Admin Lanuch
+                                .small.text-muted 2 days ago
+                        .dropdown-divider
+                        a.dropdown-item.text-center(href='#') View all Notifications
+                // notifications
+                .dropdown.header-user
+                    a.nav-link.leading-none.siderbar-link(data-toggle='sidebar-right', data-target='.sidebar-right')
+                        span.mr-3.d-none.d-lg-block
+                            span.text-gray-white
+                                span.ml-2 Alison
+                        span.avatar.avatar-md.brround
+                            img.avatar.avatar-md.brround(src='/system/assets/images/users/female/33.png', alt='Profile-img')
+                    .dropdown-menu.dropdown-menu-right.dropdown-menu-arrow
+                        .header-user.text-center.mt-4.pb-4
+                            span.avatar.avatar-xxl.brround
+                                img.avatar.avatar-xxl.brround(src='/system/assets/images/users/female/33.png', alt='Profile-img')
+                            a.dropdown-item.text-center.font-weight-semibold.user.h3.mb-0(href='#') Alison
+                            small Web Designer
+                        a.dropdown-item(href='#')
+                            i.dropdown-icon.mdi.mdi-account-outline
+                            |  Spruko technologies
+                        a.dropdown-item(href='#')
+                            i.dropdown-icon.mdi.mdi-account-plus
+                            |  Add another Account
+                        .card-body.border-top
+                            .row
+                                .col-6.text-center
+                                    a(href='')
+                                        i.dropdown-icon.mdi.mdi-message-outline.fs-30.m-0.leading-tight
+                                    div Inbox
+                                .col-6.text-center
+                                    a(href='')
+                                        i.dropdown-icon.mdi.mdi-logout-variant.fs-30.m-0.leading-tight
+                                    div Sign out
+                // profile
+                .dropdown
+                    a.nav-link.icon.siderbar-link(data-toggle='sidebar-right', data-target='.sidebar-right')
+                        i.fe.fe-more-horizontal
+                // Right-siebar

@@ -1,0 +1,25 @@
+.horizontal-main.hor-menu.clearfix
+    .horizontal-mainwrapper.container.clearfix
+        nav.horizontalMenu.clearfix
+            ul.horizontalMenu-list
+                li(aria-haspopup='true')
+                    a.sub-icon(href='/hfusion' class=(isHome)? isHome : '')
+                        i.typcn.typcn-device-desktop
+                        |  Dashboard 
+                li(aria-haspopup='true')
+                    a.sub-icon(href='/hfusion/patients' class=(isPatients)? isPatients : '')
+                        i.typcn.typcn-group-outline
+                        |  Patients
+                li(aria-haspopup='true')
+                    a.sub-icon(href='/hfusion/reports' class=(isReports)? isReports : '')
+                        i.typcn.typcn-chart-pie-outline
+                        |  Reports 
+                li(aria-haspopup='true')
+                    a.sub-icon(href='/hfusion/human-resources' class=(isHr)? isHr : '')
+                        i.typcn.typcn-briefcase
+                        |  Human Resources
+                li(aria-haspopup='true')
+                    a.sub-icon(href='/hfusion/calendar' class=(isCalendar)? isCalendar : '')
+                        i.typcn.typcn-calendar
+                        |  Calendar  
+                    

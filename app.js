@@ -9,6 +9,10 @@ var session = require('express-session');
 //Include Router
 var frontWebRouter = require('./routes/front-web/index');
 var docusignRouter = require('./routes/docusign/docusign');
+var fusionRouter = require('./routes/fusion-system/index');
+
+
+
 
 var app = express();
 
@@ -38,6 +42,9 @@ app.use(session({
 //Re- Routing
 app.use('/', frontWebRouter);
 app.use('/docusign',  docusignRouter);
+app.use('/hfusion',fusionRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

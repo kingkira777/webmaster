@@ -1,0 +1,155 @@
+doctype html 
+html(lang="en", dir="ltr")
+    head    
+        meta(charset="UTF-8")
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0')
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        
+        link(rel="icon" href="/system/assets/images/brand/favicon.ico" type="image/x-icon")
+        link(rel="shortcut icon" type="image/x-icon" href="/system/assets/images/brand/favicon.ico")
+        title=title 
+
+        //- Bootstrap
+        link(rel="stylesheet" href="/system/assets/plugins/bootstrap/css/bootstrap.min.css")
+        //- Dashboard
+        link(href="/system/assets/css/style.css" rel="stylesheet")
+        //- Custom Scroll bar css
+        link(href="/system/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet")
+        //- Horizontal-menu css
+        link(href="/system/assets/plugins/horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet")
+        link(href="/system/assets/plugins/horizontal-menu/horizontalmenu.css" rel="stylesheet")
+
+        //- Sidemenu css 
+        link(href="/system/assets/plugins/toggle-sidebar/full-sidemenu.css" rel="stylesheet")
+
+        //- Daterangepicker css
+        link(href="/system/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet")
+        //- Rightsidebar css
+        link(href="/system/assets/plugins/sidebar/sidebar.css" rel="stylesheet")
+        //- Sidebar Accordion css
+        link(href="/system/assets/plugins/accordion1/css/easy-responsive-tabs.css" rel="stylesheet")
+        //- Owl theme css
+        link(href="/system/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet")
+        //- Morris Chats css
+        link(href="/system/assets/plugins/morris/morris.css" rel="stylesheet")
+        //- Font icons css 
+        link(href="/system/assets/plugins/iconfonts/plugin.css" rel="stylesheet")
+        link(href="/system/assets/plugins/iconfonts/icons.css" rel="stylesheet")
+        link(href="/system/assets/fonts/fonts/font-awesome.min.css" rel="stylesheet")
+
+    body.app.sidebar-mini.rtl
+
+        //- #global-loader
+        //-     img(src="/system/assets/images/icons/loader.svg")
+
+        
+        .page 
+            .page-main
+
+                //- Nav Bar Header
+                include fusion-system/_header.pug
+
+                //- Horizontal Menu
+                if(!isPatient)
+                    include fusion-system/_horizontal-menu.pug
+                
+                //- Sidebar Menu
+                if(isPatient)
+                    include fusion-system/_sidebar-menu.pug
+
+                //- Header Submenu
+                include fusion-system/_header-submenu.pug
+                
+                //- App Conent 
+                //- For Full Width (.container.content-area)
+                //- For Side bar (.app-content.my-3.my-md-5.toggle-content)
+
+                //- If Not Patient Change The Container Style
+                if(!isPatient)
+                    .container.content-area
+                        .side-app 
+                            p
+                            .row 
+                                .col-md-12 
+                                    block content
+                                
+                    //- Right-sidebar
+                    include fusion-system/_right-sidebar.pug
+
+                    
+                //- If Not Patient Change The Container Style
+                if(isPatient)
+                    .app-content.my-3.my-md-5.toggle-content
+                        .side-app 
+                            p
+                            .row
+                                .col-md-12
+                                    block content
+
+
+                    //- Right-sidebar
+                    include fusion-system/_right-sidebar.pug
+
+
+                footer.footer
+                    .container
+                        .row.align-items-center.flex-row-reverse
+                            .col-lg-12.col-sm-12.text-center
+                                | Copyright © 2019 
+                                a(href='#') 
+                                    | Hospicefusion
+                               
+            a#back-to-top(href='#top')
+                i.fa.fa-angle-up
+
+
+
+
+
+
+        //- Jquery
+        script(src="/system/assets/js/vendors/jquery-3.2.1.min.js")
+        //- Bootstrap
+        script(src="/system/assets/plugins/bootstrap/popper.min.js")
+        script(src="/system/assets/plugins/bootstrap/js/bootstrap.min.js")
+
+        //- Jquery Sparkline
+        script(src="/system/assets/js/vendors/jquery.sparkline.min.js")
+
+        //- Chart Circle
+        script(src="/system/assets/js/vendors/circle-progress.min.js")
+
+        //- Star Rating js
+        script(src="/system/assets/plugins/rating/jquery.rating-stars.js")
+        //- Moment js
+        script(src="/system/assets/plugins/rating/jquery.rating-stars.js")
+        //- Daterangepicker js
+        script(src="/system/assets/plugins/bootstrap-daterangepicker/daterangepicker.js")
+        //- Horizontal Menu
+        script(src="/system/assets/plugins/horizontal-menu/horizontalmenu.js")
+        //- Sidemenu
+        script(src="/system/assets/plugins/toggle-sidebar/sidemenu.js")
+
+        //- Sidebar Accrodion
+        script(src="/system/assets/plugins/accordion1/js/easyResponsiveTabs.js")
+        //- Custom Scroll bar js
+        script(src="/system/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js")
+        //- Owl Carousel js
+        script(src="/system/assets/plugins/owl-carousel/owl.carousel.js")
+        script(src="/system/assets/plugins/owl-carousel/owl-main.js")
+        //- Rightsidebar js
+        script(src="/system/assets/plugins/sidebar/sidebar.js")
+        //- Charts js
+        script(src="/system/assets/plugins/chart/chart.bundle.js")
+        script(src="/system/assets/plugins/chart/utils.js")
+        //- Time Counter js
+        script(src="/system/assets/plugins/counters/jquery.missofis-countdown.js")
+        script(src="/system/assets/plugins/counters/counter.js")
+        //- Morris Chart js
+        script(src="/system/assets/plugins/morris/raphael-min.js")
+        script(src="/system/assets/plugins/morris/morris.js")
+        //- Custom-chart js
+        script(src="/system/assets/js/index1.js")
+        //- Custom js
+        script(src="/system/assets/js/custom.js")
+
