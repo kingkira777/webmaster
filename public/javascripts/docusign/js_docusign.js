@@ -275,6 +275,7 @@ $(function () {
     //DOWNLOA CURRENT DOCUMENT ======================================================
     window.download_current_document = function () {
         var container_height = $('#pdf-content').height();
+        var container_width = $('#pdf-content').width();
         var canvas_width = $('canvas').width();
         var canvas_height = $('canvas').height();
 
@@ -289,14 +290,16 @@ $(function () {
                 var height = pdf.internal.pageSize.height;
                 var pageHeight = height * totalPages;
 
-                pdf.addImage(imgData, 'JPEG', -50, 0, width + 100, pageHeight);
+                console.log("Container: "+container_width+ "\n Canvas: " + canvas_width + "\n Internal: "+ width);
 
-                for (var i = 1; i < totalPages; i++) {
-                    pdf.addPage('p', 'pt', 'a4');
-                    pdf.addImage(imgData, 'JPEG', -50, -(height * i), width + 100, pageHeight);
-                }
-                //                
-                pdf.save(docu_name);
+                // pdf.addImage(imgData, 'JPEG', -50, 0, container_width , pageHeight);
+
+                // for (var i = 1; i < totalPages; i++) {
+                //     pdf.addPage('p', 'pt', 'a4');
+                //     pdf.addImage(imgData, 'JPEG', -50, -(height * i), width + 100, pageHeight);
+                // }
+                // //                
+                // pdf.save(docu_name);
             });
         }, 300);
     };
