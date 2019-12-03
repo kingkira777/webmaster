@@ -50,7 +50,9 @@ router.post('/login-user',function(req,res,next){
             var xpassword = rs[0].client_password;
             master.compare_password(password,xpassword).then((isLogin)=>{
                 if(isLogin){
-                    res.send('Login Successfuly');
+                    req.session.clientno = rs[0].client_no;
+                    req.session.email = rs[0].client_email;
+                    res.redirect('/hfusion');
                     res.end();
                 }else{
                     res.redirect('/login?status=4');

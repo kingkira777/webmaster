@@ -11,6 +11,8 @@ var frontWebRouter = require('./routes/front-web/index');
 var docusignRouter = require('./routes/docusign/docusign');
 var fusionRouter = require('./routes/fusion-system/index');
 
+var patientRouter = require('./routes/fusion-system/patient/patient');
+
 
 
 
@@ -43,6 +45,9 @@ app.use(session({
 app.use('/', frontWebRouter);
 app.use('/docusign',  docusignRouter);
 app.use('/hfusion',fusionRouter);
+
+app.use('/patient', patientRouter);
+
 
 
 

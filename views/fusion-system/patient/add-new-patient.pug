@@ -1,0 +1,57 @@
+extends ../../hfusion_layout.pug 
+
+
+block content 
+    .card
+        .card-header 
+            h4.card-title Add New Patient 
+        form(action="/patient/save-new-patient" method="post")
+            .card-body  
+                .row 
+                    .col-sm-4.col-md-4 
+                        label(for="mrno") MR#
+                        input(type="text" name="mrno").form-control.input-sm
+                .row  
+                    .col-sm-4.col-md-4 
+                        label(for="firstame") Firstname 
+                        input(type="text" name="firstname").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="lastname") Lastname 
+                        input(type="text" name="lastname").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="middlename") Middlename 
+                        input(type="text" name="middlename").form-control.input-sm
+                .row  
+                    .col-sm-4.col-md-4 
+                        label(for="dob") DOB 
+                        input(type="text" name="dob").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="phone") Phone 
+                        input(type="text" name="phone").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="cellno") Cellno 
+                        input(type="text" name="cellno").form-control.input-sm
+                .row  
+                    .col-sm-4.col-md-4 
+                        label(for="gender") Gender 
+                        input(type="text" name="gender").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="race") Race 
+                        input(type="text" name="race").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="ethnicity") Ethnicity 
+                        input(type="text" name="ethnicity").form-control.input-sm
+                .row  
+                    .col-sm-4.col-md-4 
+                        label(for="denomination") Denomination
+                        input(type="text" name="denomination").form-control.input-sm
+                    .col-sm-4.col-md-4 
+                        label(for="ssn") SSN
+                        input(type="text" name="ssn").form-control.input-sm
+
+
+            .card-footer.clearfix 
+                button(type="submit").btn.btn-primary.pull-right
+                    i.fa.fa-save 
+                    | Save
+
