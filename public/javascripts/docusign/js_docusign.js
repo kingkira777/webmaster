@@ -241,11 +241,11 @@ $(function () {
             var height = pdf.internal.pageSize.height;
             var pageHeight = height * totalPages;
 
-            pdf.addImage(imgData, 'JPEG', 0, 0, width, pageHeight);
+            pdf.addImage(imgData, 'JPEG', -50, 0, width + 100, pageHeight);
 
             for (var i = 1; i < totalPages; i++) {
                 pdf.addPage('p', 'pt', 'a4');
-                pdf.addImage(imgData, 'JPEG', 0, -(height * i), width, pageHeight);
+                pdf.addImage(imgData, 'JPEG', -50, -(height * i), width + 100, pageHeight);
             }
 
             var blob = pdf.output('blob');
