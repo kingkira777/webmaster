@@ -219,6 +219,7 @@ $(function () {
     window.save_signed_copy_docs = function () {
         
         $('body').addClass('fusion');
+        $("body").css("overflow", "hidden");
 
         var signs = document.querySelectorAll('.sign img');
         for (var i = 0; i < signs.length; i++) {
@@ -261,7 +262,8 @@ $(function () {
                 
                 $('body').removeClass('fusion');
                 if(response.data == "saved"){
-                swal ( "Saved" ,  "Successfuly Saved" , "success");
+                    swal ( "Saved" ,  "Successfuly Saved" , "success");
+                    $("body").css("overflow", "auto");
                 }
             });
 
@@ -274,6 +276,9 @@ $(function () {
 
     //DOWNLOA CURRENT DOCUMENT ======================================================
     window.download_current_document = function () {
+
+        $("body").css("overflow", "hidden");
+
         var container_height = $('#pdf-content').height();
         var container_width = $('#pdf-content').width();
         var canvas_width = $('canvas').width();
@@ -290,7 +295,7 @@ $(function () {
                 var height = pdf.internal.pageSize.height;
                 var pageHeight = height * totalPages;
 
-                // console.log("Container: "+container_width+ "\n Canvas: " + canvas_width + "\n Internal: "+ width);
+                console.log("ContainerH: "+container_height + " PageH:" + pageHeight +" InternalH: "+height);
 
                 pdf.addImage(imgData, 'JPEG', -50, 0, width + 100, pageHeight);
 
@@ -300,6 +305,8 @@ $(function () {
                 }
                 //                
                 pdf.save(docu_name);
+                $("body").css("overflow", "auto");
+                
             });
         }, 300);
     };
