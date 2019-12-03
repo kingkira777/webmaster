@@ -47,3 +47,9 @@ body.fusion .fusion-loading{
     overflow: hidden;
     display: block;
 }
+
+/* 1078px*/
+#pdf-content{
+    width: 1078px;
+    height: auto;
+}
