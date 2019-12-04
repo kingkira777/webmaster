@@ -28,7 +28,7 @@ html
                         if(isFailed)
                             p.text-muted
                             | Invalid Crendentials
-                        form#loginForm.mt-4(action='/docusign/login-user' method="post")
+                        form#loginForm.mt-4(action='/docusignv2/login-user' method="post")
                             .form-group.mb-4
                                 input.form-control.border-0.shadow.form-control-lg(type='text', name='username', placeholder='Username' required)
                             .form-group.mb-4

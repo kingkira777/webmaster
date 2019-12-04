@@ -1,0 +1,36 @@
+/*Docu Sign*/
+#docu_right-menu{
+    padding: 10px;
+    position: fixed;
+    bottom: 10%;
+    right: 0;
+    width: auto;
+    height: 70vh;
+    /*border: solid 1px black;*/
+    z-index: 999;
+}
+
+/*Close Sign*/
+.closeSing{ display:none; }
+.sign:hover .closeSing{ display:block }
+
+/* Loading Status */
+.fusion-loading{
+    display:    none;
+    position:   fixed;
+    z-index:    9999;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .2 ) 
+                url('/images/loading/heartbeat.gif') 
+                50% 5% 
+                no-repeat;
+}
+
+body.fusion .fusion-loading{
+    overflow: hidden;
+    display: block;
+}
+

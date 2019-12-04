@@ -1,0 +1,97 @@
+doctype html
+html
+    head
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        title=title 
+        meta(content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport')
+        link(rel="icon" href="/atlantis/assets/img/icon.ico" type="image/x-icon")
+
+        //- Fonts and Icons
+        script(src="/atlantis/assets/js/plugin/webfont/webfont.min.js")
+        script. 
+            WebFont.load({
+                google: {"families":["Lato:300,400,700,900"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/atlantis/assets/css/fonts.min.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+
+        //- CSS Files
+        link(rel="stylesheet" href="/atlantis/assets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/atlantis/assets/css/atlantis.min.css")
+        link(rel="stylesheet" href="/stylesheets/style.css") 
+
+
+    body
+        //- Loading Status
+        .fusion-loading 
+        
+        .wrapper
+            
+            //- Navbar ~ Header
+            include docusignv2/_navbar.pug
+
+
+            //- SideBar
+            include docusignv2/_sidebar.pug
+
+
+            //- Main Panel
+            .main-panel
+                .content 
+                    block content
+
+
+
+
+        //- Core JS
+        script(src="/atlantis/assets/js/core/jquery.3.2.1.min.js")
+        script(src="/atlantis/assets/js/core/popper.min.js")
+        script(src="/atlantis/assets/js/core/bootstrap.min.js")
+
+        //- Jquery UI
+        script(src="/atlantis/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js")
+        script(src="/atlantis/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js")
+
+        //- Jquery Scrollbar
+        script(src="/atlantis/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js")
+
+        //- Jquery Sparkline
+        script(src="/atlantis/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js")
+
+        //- Datatables
+        script(src="/atlantis/assets/js/plugin/datatables/datatables.min.js")
+
+        //- Bootstrap Notify
+        script(src="/atlantis/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js")
+
+        //- Sweet Aler
+        script(src="/atlantis/assets/js/plugin/sweetalert/sweetalert.min.js")
+
+        //- Atlantis
+        script(src="/atlantis/assets/js/atlantis.min.js")
+
+        //- Docusign
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js")
+        script(src="/x_docusign/pdfjs/build/pdf.js")
+        script(src="/x_docusign/pdfjs/build/pdf.worker.js")
+        script(src="/x_docusign/displace/displace.min.js")
+        script(src="/x_docusign/htmltocanvas/html2canvas.min.js")
+        script(src="/javascripts/docusign/js_docusign.js")
+        
+        script. 
+            $(document).ready( function () {
+                $('#docu-table-list').DataTable({
+                    order : [[0, 'desc']],
+                    columnDefs : [
+                    {
+                        targets : [0],
+                        visible : false
+                    } 
+                    ]
+                });
+            });
+
+

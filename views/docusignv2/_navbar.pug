@@ -1,0 +1,35 @@
+.main-header
+                .logo-header(data-background-color='light-blue')
+                    a.logo(href='/docusignv2')
+                        img.navbar-brand(src='/atlantis/assets/img/actLogo.png', alt='navbar brand')
+                    button.navbar-toggler.sidenav-toggler.ml-auto(type='button', data-toggle='collapse', data-target='collapse', aria-expanded='false', aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                            i.icon-menu
+                    button.topbar-toggler.more
+                        i.icon-options-vertical
+                    .nav-toggle
+                        button.btn.btn-toggle.toggle-sidebar
+                            i.icon-menu
+
+                nav.navbar.navbar-header.navbar-expand-lg(data-background-color='light-blue')
+                    .container-fluid
+                        //- #search-nav.collapse
+                        //-     form.navbar-left.navbar-form.nav-search.mr-md-3
+                        //-         .input-group
+                        //-             .input-group-prepend
+                        //-                 button.btn.btn-search.pr-1(type='submit')
+                        //-                     i.fa.fa-search.search-icon
+                        //-             input.form-control(type='text', placeholder='Search ...')
+                        ul.navbar-nav.topbar-nav.ml-md-auto.align-items-center
+                            li.nav-item.toggle-nav-search.hidden-caret
+                                a.nav-link(data-toggle='collapse', href='#search-nav', role='button', aria-expanded='false', aria-controls='search-nav')
+                                    i.fa.fa-search
+                            
+                            li.nav-item.dropdown.hidden-caret
+                                a.dropdown-toggle.profile-pic(data-toggle='dropdown', href='#', aria-expanded='false')
+                                    .avatar-sm
+                                        img.avatar-img.rounded-circle(src='https://via.placeholder.com/150', alt='...')
+                                ul.dropdown-menu.dropdown-user.animated.fadeIn
+                                    .dropdown-user-scroll.scrollbar-outer
+                                        li  
+                                            a.dropdown-item(href='/docusign/logout') Logout

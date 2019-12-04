@@ -14,10 +14,10 @@
 /* Sign Menu */
 #docu_right_menu{
     position: fixed;
+    padding: 10px;
     top: 10;
     right: 0;
-    z-index: 222;
-    padding: 10px;
+    z-index: 999;
     border: solid 1px black;
 }
 
@@ -48,8 +48,3 @@ body.fusion .fusion-loading{
     display: block;
 }
 
-/* 1078px*/
-#pdf-content{
-    width: 1078px;
-    height: auto;
-}

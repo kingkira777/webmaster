@@ -68,6 +68,7 @@ $(function () {
 
     $('body').addClass('fusion');
     var filepath = urlFile.replace('files', '');
+    // var tempFile = "/docusign/pending/ca/8f7ca29204a6.pdf";
     var loadingTask = pdfjsLib.getDocument(filepath);
     loadingTask.promise.then(function (pdf) {
         var pdf_container = document.getElementById('pdf-content');
@@ -124,12 +125,15 @@ $(function () {
             if (response.data.doc_sign == "true") {
                 isSigned = true;
                 for (var i = 0; i < sign_arr.length; i++) {
-                    $('#pdf-content').append('<div  class="sign" style="position:absolute; z-index:111; left:' + sign_arr[i].left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times"></i></span><img src="/images/docusign/np-signature/sig_paulfortaleza.png" /></div>');
+                    var left = sign_arr[i].left - 250;
+                    $('#pdf-content').append('<div  class="sign" style="position:absolute; z-index:111; left:'+left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span><img src="/images/docusign/np-signature/sig_paulfortaleza.png" /></div>');
                 }
             } else {
                 isSigned = false;
                 for (var i = 0; i < sign_arr.length; i++) {
-                    $('#pdf-content').append('<div class="sign" style="position:absolute; z-index:111; left:' + sign_arr[i].left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times"></i></span> <img  src="/images/docusign/np-signature/sign_here.png" /></div>');
+                    var left = sign_arr[i].left - 250;
+                    console.log(left);
+                    $('#pdf-content').append('<div class="sign" style="position:absolute; z-index:111; left:' + left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span> <img  src="/images/docusign/np-signature/sign_here.png" /></div>');
                 }
             }
             var sign = document.querySelectorAll('.sign');
@@ -162,7 +166,7 @@ $(function () {
 
             var div = document.createElement('div');
             div.style.position = "absolute";
-            div.style.zIndex = "999";
+            div.style.zIndex = "111";
             $(div).addClass('sign');
 
             var span = document.createElement('span');
@@ -178,8 +182,9 @@ $(function () {
             div.appendChild(span);
             div.appendChild(img);
 
-            div.style.top = e.pageY - 50 + 'px';
-            div.style.left = e.pageX - 100 + 'px';
+            console.log(e.pageY+ " "+ e.pageX);
+            div.style.top = e.pageY - 80 + 'px';
+            div.style.left =  e.pageX - 380 + 'px';
 
             $('#pdf-content').append(div);
             onMouseOver(div);
@@ -200,8 +205,8 @@ $(function () {
                 e = e || window.event;
                 e.preventDefault();
 
-                el.style.top = e.pageY - 50 + 'px';
-                el.style.left = e.pageX - 100 + 'px';
+                el.style.top = e.pageY - 80 + 'px';
+                el.style.left = e.pageX - 380 + 'px';
             };
         }
     }
@@ -219,7 +224,6 @@ $(function () {
     window.save_signed_copy_docs = function () {
         
         $('body').addClass('fusion');
-        $("body").css("overflow", "hidden");
 
         var signs = document.querySelectorAll('.sign img');
         for (var i = 0; i < signs.length; i++) {
@@ -231,22 +235,25 @@ $(function () {
         var canvas_width = $('canvas').width();
         var canvas_height = $('canvas').height();
 
-        html2canvas($('#pdf-content')[0]).then(function (canvas) {
+        html2canvas($('#pdf-content')[0],{
+            scale : 1,
+            width : canvas_width
+        }).then(function (canvas) {
 
             var totalPages = Math.ceil(container_height / canvas_height) - 1;
 
-            var imgData = canvas.toDataURL("image/jpeg", 1.5);
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
 
             var pdf = new jsPDF('p', 'pt', 'a4');
             var width = pdf.internal.pageSize.width;
             var height = pdf.internal.pageSize.height;
             var pageHeight = height * totalPages;
 
-            pdf.addImage(imgData, 'JPEG', -50, 0, width + 100, pageHeight);
+            pdf.addImage(imgData, 'JPEG',0, 0, width, pageHeight);
 
             for (var i = 1; i < totalPages; i++) {
                 pdf.addPage('p', 'pt', 'a4');
-                pdf.addImage(imgData, 'JPEG', -50, -(height * i), width + 100, pageHeight);
+                pdf.addImage(imgData, 'JPEG',0, -(height * i), width, pageHeight);
             }
 
             var blob = pdf.output('blob');
@@ -263,7 +270,6 @@ $(function () {
                 $('body').removeClass('fusion');
                 if(response.data == "saved"){
                     swal ( "Saved" ,  "Successfuly Saved" , "success");
-                    $("body").css("overflow", "auto");
                 }
             });
 
@@ -276,37 +282,34 @@ $(function () {
 
     //DOWNLOA CURRENT DOCUMENT ======================================================
     window.download_current_document = function () {
-
-        $("body").css("overflow", "hidden");
-
+        
+        $('body').addClass('fusion');
         var container_height = $('#pdf-content').height();
         var container_width = $('#pdf-content').width();
         var canvas_width = $('canvas').width();
         var canvas_height = $('canvas').height();
 
         setTimeout(function () {
-            html2canvas($('#pdf-content')[0]).then(function (canvas) {
+            html2canvas($('#pdf-content')[0],{ 
+                scale : 1,
+                width : canvas_width
+                // allowTaint: false,
+                // letterRendering: true
+            }).then(function (canvas) {
 
                 var totalPages = Math.ceil(container_height / canvas_height) - 1;
-
-                var imgData = canvas.toDataURL("image/jpeg", 1.5);
+                var imgData = canvas.toDataURL("image/jpeg",1.0);
                 var pdf = new jsPDF('p', 'pt', 'a4');
                 var width = pdf.internal.pageSize.width;
                 var height = pdf.internal.pageSize.height;
                 var pageHeight = height * totalPages;
-
-                console.log("ContainerH: "+container_height + " PageH:" + pageHeight +" InternalH: "+height);
-
-                pdf.addImage(imgData, 'JPEG', -50, 0, width + 100, pageHeight);
-
+                pdf.addImage(imgData, 'JPEG', 0, 0, width, pageHeight);
                 for (var i = 1; i < totalPages; i++) {
                     pdf.addPage('p', 'pt', 'a4');
-                    pdf.addImage(imgData, 'JPEG', -50, -(height * i), width + 100, pageHeight);
+                    pdf.addImage(imgData, 'JPEG', 0, -(height * i), width, pageHeight);
                 }
-                //                
                 pdf.save(docu_name);
-                $("body").css("overflow", "auto");
-                
+                $('body').removeClass('fusion');
             });
         }, 300);
     };

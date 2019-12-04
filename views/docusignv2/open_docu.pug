@@ -1,0 +1,28 @@
+extends ../docusign_layoutV2.pug 
+
+block content   
+    
+    #docu_right-menu
+
+        //- Signed Docs        
+        if(accesslvl == "admin" || accesslvl == "doctor")
+            a(role="button" onclick="signed_current_docs();").btn.btn-primary.btn-block
+                i.fa.fa-pencil-alt
+
+        if(accesslvl == "admin" || accesslvl == "user")
+            //- Add Marked Signed
+            a(href="#").btn.btn-primary.btn-block#markSigned
+                i.fa.fa-edit
+            //- Save Marked Signed  
+        if(accesslvl == "admin" || accesslvl == "doctor" || accesslvl == "user")
+            a(role="button" onclick="save_document_signedLoc(); save_signed_copy_docs();").btn.btn-primary.btn-block
+                i.fa.fa-save
+            a(role="button" onclick="download_current_document();").btn.btn-success.btn-block
+                i.fa.fa-download
+            //- Close Singed
+            a(href="/docusignv2").btn.btn-danger.btn-block
+                i.fa.fa-times
+
+
+    #pdf-content(align="center" style="width: 900px;")
+        

@@ -10,6 +10,7 @@ var session = require('express-session');
 var frontWebRouter = require('./routes/front-web/index');
 var docusignRouter = require('./routes/docusign/docusign');
 var fusionRouter = require('./routes/fusion-system/index');
+var docusignV2Router = require('./routes/docusignV2/docusign');
 
 var patientRouter = require('./routes/fusion-system/patient/patient');
 
@@ -44,6 +45,7 @@ app.use(session({
 //Re- Routing
 app.use('/', frontWebRouter);
 app.use('/docusign',  docusignRouter);
+app.use('/docusignV2', docusignV2Router);
 app.use('/hfusion',fusionRouter);
 
 app.use('/patient', patientRouter);
