@@ -8,10 +8,20 @@ block content
             .card
                 .card-header 
                     .row
-                        .col-sm-6
+                        .col-sm-3
                             h4 Pending Documents
-                        if(accesslvl == "admin" || accesslvl == "doctor")
-                            .col-sm-6(align="right") 
+                        
+                        .col-sm-6
+                            form(action="/docusignv2/upload-file" method="post" encType="multipart/form-data")
+                                .form-group
+                                    .input-icon
+                                        input(type="file" name="file").form-control
+                                        span.input-icon-addon
+                                            button.btn.btn-primary.btn-sm 
+                                                i.fa.fa-upload Upload
+                         
+                        .col-sm-3(align="right")
+                            if(accesslvl == "admin" || accesslvl == "doctor")
                                 a(role="button" href="/docusignv2/signed-all").btn.btn-success.btn-sm.right
                                     i.fa.fa-pencil Sign All
 
@@ -34,7 +44,4 @@ block content
                                             i.fa.fa-trash
 
                 .card-footer
-                    form(action="/docusignv2/upload-file" method="post" encType="multipart/form-data")
-                        input(type="file" name="file")
-                        button.btn.btn-primary.btn-sm 
-                            i.fa.fa-upload Upload
+                    

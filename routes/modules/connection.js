@@ -4,7 +4,7 @@ var con;
 function Connetion(){
 
 
-    //LOCAL DATABASE
+    // //LOCAL DATABASE
     // con = mysql.createPool({
     //     host : 'localhost',
     //     user : 'root',
@@ -14,22 +14,22 @@ function Connetion(){
 
     //HOSPICE FUSION DATABASE
 
-    // con = mysql.createPool({
-    //     host : '182.50.132.78',
-    //     user : 'master',
-    //     password : 'master707!',
-    //     database :  'master'
-    // }); 
+    con = mysql.createPool({
+        host : '182.50.132.78',
+        user : 'master',
+        password : 'master707!',
+        database :  'master'
+    }); 
 
 
     //TRIUNION DATABASE 
 
-    con = mysql.createPool({
-        host : '148.72.232.128',
-        user : 'master',
-        password : '*Master7!',
-        database :  'master'
-    }); 
+    // con = mysql.createPool({
+    //     host : '148.72.232.128',
+    //     user : 'master',
+    //     password : '*Master7!',
+    //     database :  'master'
+    // }); 
 
     return con; 
 }
