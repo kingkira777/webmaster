@@ -18,7 +18,7 @@
 .fusion-loading{
     display:    none;
     position:   fixed;
-    z-index:    9999;
+    z-index:    222;
     top:        0;
     left:       0;
     height:     100%;

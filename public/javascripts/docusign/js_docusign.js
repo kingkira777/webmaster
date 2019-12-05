@@ -1,6 +1,7 @@
 displace = window.displacejs;
 window.docu_name = "";
 window.isSigned = false;
+window.name = "";
 
 //Tools============================================================================
 $(function () {
@@ -61,6 +62,7 @@ $(function () {
     var urlParams = new URLSearchParams(window.location.search);
     var urlFile = urlParams.get('filepath');
     docu_name = urlParams.get('filename');
+    name = urlParams.get('name');
     isSigned = (urlParams.get('signed') == "true") ? true : false;
 
     if (urlFile == null)
@@ -126,14 +128,14 @@ $(function () {
                 isSigned = true;
                 for (var i = 0; i < sign_arr.length; i++) {
                     var left = sign_arr[i].left - 250;
-                    $('#pdf-content').append('<div  class="sign" style="position:absolute; z-index:111; left:'+left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span><img src="/images/docusign/np-signature/sig_paulfortaleza.png" /></div>');
+                    $('#pdf-content').append('<div  class="sign" style="position:absolute; z-index:999; left:'+left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span><img src="/images/docusign/np-signature/sig_paulfortaleza.png" /></div>');
                 }
             } else {
                 isSigned = false;
                 for (var i = 0; i < sign_arr.length; i++) {
                     var left = sign_arr[i].left - 250;
                     console.log(left);
-                    $('#pdf-content').append('<div class="sign" style="position:absolute; z-index:111; left:' + left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span> <img  src="/images/docusign/np-signature/sign_here.png" /></div>');
+                    $('#pdf-content').append('<div class="sign" style="position:absolute; z-index:999; left:' + left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span> <img  src="/images/docusign/np-signature/sign_here.png" /></div>');
                 }
             }
             removeSignMark();
@@ -167,7 +169,7 @@ $(function () {
 
             var div = document.createElement('div');
             div.style.position = "absolute";
-            div.style.zIndex = "111";
+            div.style.zIndex = "999";
             $(div).addClass('sign');
 
             var span = document.createElement('span');
@@ -309,7 +311,7 @@ $(function () {
                     pdf.addPage('p', 'pt', 'a4');
                     pdf.addImage(imgData, 'JPEG', 0, -(height * i), width, pageHeight);
                 }
-                pdf.save(docu_name);
+                pdf.save(name);
                 $('body').removeClass('fusion');
             });
         }, 300);

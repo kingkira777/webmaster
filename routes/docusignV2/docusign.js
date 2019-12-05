@@ -37,8 +37,11 @@ router.get('/open-file?',function(req,res,next){
     var filename = req.query.filename;
     var filepath = 'files/docusign/signed/'+ req.session.branch+"/"+filename;
     fs.readFile(filepath,function(err,data){
-        res.contentType("application/pdf");
-        res.send(data);
+        res.setHeader('Content-disposition', 'attachment; filename='+ filename);
+        res.setHeader('Content-type', 'application/pdf');
+        // res.contentType("application/pdf");
+        res.download(data,'Sample Title');
+        res.end();
     });
 });
 
@@ -118,7 +121,6 @@ router.get('/delete-doc?', function(req,res,next){
 
 
 //====================================POST PART======================================//
-
 
 
 //Signed All
