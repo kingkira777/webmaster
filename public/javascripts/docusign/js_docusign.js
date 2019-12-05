@@ -136,6 +136,7 @@ $(function () {
                     $('#pdf-content').append('<div class="sign" style="position:absolute; z-index:111; left:' + left + 'px; top:' + sign_arr[i].top + 'px;"> <span class="pull-right closeSing" ><i class="fa fa-times fa-2x"></i></span> <img  src="/images/docusign/np-signature/sign_here.png" /></div>');
                 }
             }
+            removeSignMark();
             var sign = document.querySelectorAll('.sign');
             for (var i = 0; i < sign.length; i++) {
                 displace(sign[i], {
@@ -153,7 +154,7 @@ $(function () {
 //Add Mark Sign =================================================================
 $(function () {
     dragSignElement(document.getElementById("markSigned"));
-    function removeSignMark() {
+    window.removeSignMark = function() {
         $('.sign span').click(function () {
             $(this).parent().remove();
         });

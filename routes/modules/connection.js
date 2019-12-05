@@ -13,7 +13,6 @@ function Connetion(){
     // }); 
 
     //HOSPICE FUSION DATABASE
-
     con = mysql.createPool({
         host : '182.50.132.78',
         user : 'master',
