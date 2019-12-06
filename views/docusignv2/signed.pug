@@ -27,8 +27,8 @@ block content
                                     td=doc.doc_filename 
                                     td=doc.doc_signdate
                                     td
-                                        a(href="/docusignv2/open-file?filename="+doc.doc_name).btn.btn-success.btn-sm.btn-round 
-                                            i.fa.fa-download
+                                        //- a(href="/docusignv2/open-file?filename="+doc.doc_name).btn.btn-success.btn-sm.btn-round 
+                                        //-     i.fa.fa-download
                                         a(href="/docusignv2/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path+"&name="+doc.doc_filename).btn.btn-primary.btn-sm.btn-round 
                                             i.fa.fa-edit
                                         a(href="/docusignv2/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
