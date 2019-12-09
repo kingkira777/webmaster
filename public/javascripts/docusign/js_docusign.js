@@ -62,7 +62,7 @@ $(function () {
     var urlParams = new URLSearchParams(window.location.search);
     var urlFile = urlParams.get('filepath');
     docu_name = urlParams.get('filename');
-    name = urlParams.get('name');
+    name = decodeURIComponent(window.location.search.split('=')[4]);
     isSigned = (urlParams.get('signed') == "true") ? true : false;
 
     if (urlFile == null)
