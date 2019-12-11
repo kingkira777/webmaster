@@ -1,0 +1,17 @@
+.bg-body{
+    background-color: black;
+}
+.err-message{
+    position: absolute;
+    margin: 10% 0 0 40%;
+    padding: 20px;
+    text-align: center;
+    color: blanchedalmond;
+    border: solid 1px white;
+    border-radius: 10px;
+
+}
+
+canvas{
+    height: 300px;
+}
