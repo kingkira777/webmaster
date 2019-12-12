@@ -27,12 +27,20 @@ router.get('/patients',function(req,res,next){
         res.redirect('/');
         res.end();
     }else{
-        res.render('fusion-system/patients',{ 
-            title : 'Patients', 
-            isPatients : 'active',
-            email : req.session.email
+        var gp = `SELECT * FROM patients ORDER BY patient_id DESC`;
+        con.query(gp,function(err,rs){
+            if(err)
+                res.json({
+                    message : err,
+                });
+            res.render('fusion-system/patients',{ 
+                title : 'Patients', 
+                isPatients : 'active',
+                email : req.session.email,
+                patients : rs
+            });
+            res.end(); 
         });
-        res.end();
     }
 });
 
@@ -88,16 +96,15 @@ router.get('/human-resources',function(req,res,next){
 
 //=============================ADD PRIMARY REQUEST===================================//
 router.get('/add-new-patient',function(req,res,next){
-    if(!req.session.clientno){
+    if(!req.session.clientno)
         res.redirect('/');
         res.end();
-    }else{
-        res.render('fusion-system/patient/add-new-patient',{
-            title : 'Add New Patient', 
-            isPatients : 'active',
-            email : req.session.email
-        });
-    }
+
+    res.render('fusion-system/patient/add-new-patient',{
+        title : 'Add New Patient', 
+        isPatients : 'active',
+        email : req.session.email
+    });
 });
 
 

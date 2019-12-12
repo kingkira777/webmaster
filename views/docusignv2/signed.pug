@@ -9,28 +9,30 @@ block content
                 .card-header 
                     .row
                         .col-sm-6
-                            h4 Singed Documents
+                            h4 Signed Documents
             
                     
                 .card-body 
-                    table#docu-table-list.table.table-stripped.table-hover 
-                        thead 
-                            tr  
-                                th ID
-                                th Filename 
-                                th(style="width:100px;") Signed Date
-                                th(style="width:210px;") Options
-                        tbody
-                            each doc in data
-                                tr 
-                                    td=doc.doc_id
-                                    td=doc.doc_filename 
-                                    td=doc.doc_signdate
-                                    td
-                                        //- a(href="/docusignv2/open-file?filename="+doc.doc_name).btn.btn-success.btn-sm.btn-round 
-                                        //-     i.fa.fa-download
-                                        a(href="/docusignv2/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path+"&name="+doc.doc_filename).btn.btn-primary.btn-sm.btn-round 
-                                            i.fa.fa-edit
-                                        a(href="/docusignv2/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
-                                            i.fa.fa-trash
+                    .table-responsive
+                        table#docu-table-list.table.table-stripped.table-hover(style="width:100%")
+                            thead 
+                                tr  
+                                    th ID
+                                    th(style="width:210px;") Options
+                                    th Filename 
+                                    th(style="width:100px;") Signed Date
+                            tbody
+                                each doc in data
+                                    tr 
+                                        td=doc.doc_id
+                                        td
+                                            //- a(href="/docusignv2/open-file?filename="+doc.doc_name).btn.btn-success.btn-sm.btn-round 
+                                            //-     i.fa.fa-download
+                                            a(href="/docusignv2/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path+"&name="+doc.doc_filename).btn.btn-primary.btn-sm.btn-round 
+                                                i.fa.fa-edit
+                                            a(href="/docusignv2/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
+                                                i.fa.fa-trash
+                                        td=doc.doc_filename 
+                                        td=doc.doc_signdate
+                                    
                                         

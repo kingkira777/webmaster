@@ -26,22 +26,24 @@ block content
                                     i.fa.fa-pencil Sign All
 
                 .card-body 
-                    table#docu-table-list.table.table-stripped.table-hover 
-                        thead 
-                            tr  
-                                th ID
-                                th Filename 
-                                th(style="width:150px;") Options
-                        tbody
-                            each doc in doclist
-                                tr 
-                                    td=doc.doc_id
-                                    td=doc.doc_filename 
-                                    td 
-                                        a(href="/docusignv2/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path+"&name="+doc.doc_filename).btn.btn-primary.btn-sm.btn-round 
-                                            i.fa.fa-edit
-                                        a(href="/docusignv2/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
-                                            i.fa.fa-trash
+                    .table-responsive
+                        table#docu-table-list.table.table-stripped.table-hover(style="width:100%") 
+                            thead 
+                                tr  
+                                    th ID
+                                    th(style="width:150px;") Options
+                                    th Filename 
+                            tbody
+                                each doc in doclist
+                                    tr
+                                        td=doc.doc_id
+                                        td 
+                                            a(href="/docusignv2/open-document?filename="+ doc.doc_name +"&signed="+doc.doc_sign+"&filepath="+doc.doc_path+"&name="+doc.doc_filename).btn.btn-primary.btn-sm.btn-round 
+                                                i.fa.fa-edit
+                                            a(href="/docusignv2/delete-doc?filename="+ doc.doc_name + "&path="+doc.doc_path).btn.btn-danger.btn-sm.btn-round 
+                                                i.fa.fa-trash
+                                        td=doc.doc_filename 
+                                        
 
                 .card-footer
                     

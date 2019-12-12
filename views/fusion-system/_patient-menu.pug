@@ -1,0 +1,430 @@
+.app-sidebar__overlay(data-toggle='sidebar')
+aside.app-sidebar.toggle-sidebar
+    .app-sidebar__user.pb-0
+        .user-body
+            span.avatar.avatar-xxl.brround.text-center.cover-image(data-image-src='../assets/images/users/female/33.png')
+        .user-info
+            a.ml-2(href='#')
+                span.text-dark.app-sidebar__user-name.font-weight-semibold Jenna Side
+                br
+                span.text-muted.app-sidebar__user-name.text-sm  Web Designer
+    .tab-menu-heading.siderbar-tabs.border-0.p-0
+        .tabs-menu
+            // Tabs
+            ul.nav.panel-tabs
+                li
+                    a.active(href='#index1', data-toggle='tab')
+                        i.fa.fa-home.fs-17
+                li
+                    a(href='#index2', data-toggle='tab')
+                        i.fa.fa-envelope.fs-17
+                li
+                    a(href='#index3', data-toggle='tab')
+                        i.fa.fa-user.fs-17
+                li
+                    a(href='login.html', title='logout')
+                        i.fa.fa-power-off.fs-17
+    .panel-body.tabs-menu-body.side-tab-body.p-0.border-0
+        .tab-content
+            #index1.tab-pane.active
+                ul.side-menu.toggle-menu
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-device-desktop
+                            span.side-menu__label Dashboard
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='index.html')
+                                    span Dashboard 01
+                            li
+                                a.slide-item(href='index2.html')
+                                    span Dashboard 02
+                            li
+                                a.slide-item(href='index3.html')
+                                    span Dashboard 03
+                            li
+                                a.slide-item(href='index4.html')
+                                    span Dashboard 04
+                            li
+                                a.slide-item(href='index5.html')
+                                    span Dashboard 05
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-th-large-outline
+                            span.side-menu__label Apps
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='cards.html')  Cards design
+                            li
+                                a.slide-item(href='cards-image.html')  Image  Cards design
+                            li
+                                a.slide-item(href='chat.html')  Default Chat
+                            li
+                                a.slide-item(href='notify.html')  Notifications
+                            li
+                                a.slide-item(href='sweetalert.html')  Sweet alerts
+                            li
+                                a.slide-item(href='rangeslider.html')  Range slider
+                            li
+                                a.slide-item(href='scroll.html')  Content Scroll bar
+                            li
+                                a.slide-item(href='counters.html') Counters
+                            li
+                                a.slide-item(href='loaders.html')  Loaders
+                            li
+                                a.slide-item(href='time-line.html')  Time Line
+                            li
+                                a.slide-item(href='rating.html')  Rating
+                    li
+                        a.side-menu__item(href='widgets.html')
+                            i.side-menu__icon.typcn.typcn-arrow-move-outline
+                            span.side-menu__label Widgets
+                    li
+                        a.side-menu__item(href='maps.html')
+                            i.side-menu__icon.typcn.typcn-location-outline
+                            span.side-menu__label Maps
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-chart-pie-outline
+                            span.side-menu__label Charts
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='chart-chartist.html') Chartist Charts
+                            li
+                                a.slide-item(href='chart-morris.html')  Morris Charts
+                            li
+                                a.slide-item(href='chart-js.html')  Charts js
+                            li
+                                a.slide-item(href='chart-peity.html')  Pie Charts
+                            li
+                                a.slide-item(href='chart-echart.html')  Echart Charts
+                            li
+                                a.slide-item(href='chart-flot.html')  Flot Charts
+                            li
+                                a.slide-item(href='chart-high.html')  High Charts
+                            li
+                                a.slide-item(href='chart-nvd3.html')  Nvd3 Charts
+                            li
+                                a.slide-item(href='chart-dygraph.html') Dygraph Charts
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-spanner-outline
+                            span.side-menu__label Elements
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='alerts.html')  Alerts
+                            li
+                                a.slide-item(href='buttons.html')  Buttons
+                            li
+                                a.slide-item(href='colors.html')  Colors
+                            li
+                                a.slide-item(href='avatars.html')  Avatars
+                            li
+                                a.slide-item(href='dropdown.html') Dropdowns
+                            li
+                                a.slide-item(href='thumbnails.html')  Thumbnails
+                            li
+                                a.slide-item(href='mediaobject.html')  Media Object
+                            li
+                                a.slide-item(href='list.html')  List
+                            li
+                                a.slide-item(href='tags.html')  Tags
+                            li
+                                a.slide-item(href='pagination.html')  Pagination
+                            li
+                                a.slide-item(href='navigation.html')  Navigation
+                            li
+                                a.slide-item(href='typography.html')  Typography
+                            li
+                                a.slide-item(href='breadcrumbs.html')  Breadcrumbs
+                            li
+                                a.slide-item(href='badge.html')  Badges
+                            li
+                                a.slide-item(href='jumbotron.html')  Jumbotron
+                            li
+                                a.slide-item(href='panels.html')  Panels
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-briefcase
+                            span.side-menu__label Advanced UI
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='modal.html')  Modal
+                            li
+                                a.slide-item(href='tooltipandpopover.html')  Tooltip and popover
+                            li
+                                a.slide-item(href='progress.html')  Progress
+                            li
+                                a.slide-item(href='carousel.html')  Carousels
+                            li
+                                a.slide-item(href='accordion.html')  Accordions
+                            li
+                                a.slide-item(href='tabs.html')  Tabs
+                            li
+                                a.slide-item(href='headers.html')  Headers
+                            li
+                                a.slide-item(href='footers.html') Footers
+                            li
+                                a.slide-item(href='crypto-currencies.html')  Crypto-currencies
+                            li
+                                a.slide-item(href='users-list.html')  User List
+                            li
+                                a.slide-item(href='search.html')  Search page
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-document
+                            span.side-menu__label Forms
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='form-elements.html')  Form Elements
+                            li
+                                a.slide-item(href='form-wizard.html')  Form Wizard
+                            li
+                                a.slide-item(href='wysiwyag.html')  Form Editor
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-point-of-interest-outline
+                            span.side-menu__label Icons
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='icons.html')  Font Awesome
+                            li
+                                a.slide-item(href='icons2.html')  Material Design Icons
+                            li
+                                a.slide-item(href='icons3.html')  Simple Line Icons
+                            li
+                                a.slide-item(href='icons4.html')  Feather Icons
+                            li
+                                a.slide-item(href='icons5.html')  Ionic Icons
+                            li
+                                a.slide-item(href='icons6.html')  Flag Icons
+                            li
+                                a.slide-item(href='icons7.html')  pe7 Icons
+                            li
+                                a.slide-item(href='icons8.html')  Themify Icons
+                            li
+                                a.slide-item(href='icons9.html') Typicons Icons
+                            li
+                                a.slide-item(href='icons10.html') Weather Icons
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-calendar-outline
+                            span.side-menu__label Calendar
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='calendar.html') Default calendar
+                            li
+                                a.slide-item(href='calendar2.html') Full calendar
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-clipboard
+                            span.side-menu__label Tables
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='tables.html') Default table
+                            li
+                                a.slide-item(href='datatable.html')  Data Tables
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-cog-outline
+                            span.side-menu__label Pages
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='profile.html')  Profile
+                            li
+                                a.slide-item(href='editprofile.html')  Edit Profile
+                            li
+                                a.slide-item(href='email.html')  Email
+                            li
+                                a.slide-item(href='emailservices.html')  Email Inbox
+                            li
+                                a.slide-item(href='gallery.html')  Gallery
+                            li
+                                a.slide-item(href='about.html')  About Company
+                            li
+                                a.slide-item(href='services.html')  Services
+                            li
+                                a.slide-item(href='faq.html')  FAQS
+                            li
+                                a.slide-item(href='terms.html')  Terms and Conditions
+                            li
+                                a.slide-item(href='empty.html')  Empty Page
+                            li
+                                a.slide-item(href='construction.html')  Under Construction
+                            li
+                                a.slide-item(href='blog.html')  Blog
+                            li
+                                a.slide-item(href='invoice.html')  Invoice
+                            li
+                                a.slide-item(href='pricing.html')  Pricing Tables
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-shopping-cart
+                            span.side-menu__label E-Commerce
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='shop.html')  Products
+                            li
+                                a.slide-item(href='shop-des.html') Product Details
+                            li
+                                a.slide-item(href='cart.html')  Shopping Cart
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-download-outline
+                            span.side-menu__label Custom
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='login.html')  Login
+                            li
+                                a.slide-item(href='register.html')  Register
+                            li
+                                a.slide-item(href='forgot-password.html')  Forgot Password
+                            li
+                                a.slide-item(href='lockscreen.html')  Lock screen
+                    li.slide
+                        a.side-menu__item(data-toggle='slide', href='#')
+                            i.side-menu__icon.typcn.typcn-info-outline
+                            span.side-menu__label Error Pages
+                            i.angle.fa.fa-angle-right
+                        ul.slide-menu
+                            li
+                                a.slide-item(href='400.html')  400 Error
+                            li
+                                a.slide-item(href='401.html')  401 Error
+                            li
+                                a.slide-item(href='403.html')  403 Error
+                            li
+                                a.slide-item(href='404.html')  404 Error
+                            li
+                                a.slide-item(href='500.html')  500 Error
+                            li
+                                a.slide-item(href='503.html')  503 Error
+            #index2.tab-pane.border-top
+                .list-group.list-group-transparent.mb-0.mail-inbox
+                    .mt-3.mb-3.ml-3.mr-3.text-center
+                        a.btn.btn-primary.btn-block(href='email.html')
+                            i.typcn.typcn-pencil.fs-14
+                            span.email-text Compose
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center.active(href='emailservices.html')
+                        span.icon.mr-3
+                            i.fe.fe-inbox
+                        span.email-text Inbox
+                        span.ml-auto.badge-pill.badge.badge-success.email-text 05
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-send
+                        span.email-text Sent Mail
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-alert-circle
+                        span.email-text Important
+                        span.ml-auto.badge-pill.badge.badge-danger.email-text 01
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-star
+                        span.email-text Starred
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-file
+                        span.email-text Drafts
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-tag
+                        span.email-text Tags
+                    a.list-group-item.list-group-item-action.d-flex.align-items-center(href='#')
+                        span.icon.mr-3
+                            i.fe.fe-trash-2
+                        span.email-text  Trash
+            #index3.tab-pane.border-top
+                .list-group.list-group-flush
+                    form.form-inline.p-4.m-0
+                        .search-element
+                            input.form-control.header-search.w-100(type='search', placeholder='Search...', aria-label='Search')
+                            span.Search-icon
+                                i.fa.fa-search
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/12.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Mozelle Belt
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/21.jpg')
+                        .user-name
+                            .font-weight-semibold Florinda Carasco
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/29.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Alina Bernier
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/2.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Zula Mclaughin
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/34.jpg')
+                        .user-name
+                            .font-weight-semibold Isidro Heide
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/12.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Mozelle Belt
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/21.jpg')
+                        .user-name
+                            .font-weight-semibold Florinda Carasco
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/29.jpg')
+                        .user-name
+                            .font-weight-semibold Alina Bernier
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/2.jpg')
+                        .user-name
+                            .font-weight-semibold Zula Mclaughin
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/14.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Isidro Heide
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/11.jpg')
+                        .user-name
+                            .font-weight-semibold Florinda Carasco
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/9.jpg')
+                        .user-name
+                            .font-weight-semibold Alina Bernier
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/male/22.jpg')
+                                span.avatar-status.bg-green
+                        .user-name
+                            .font-weight-semibold Zula Mclaughin
+                    .list-group-item.d-flex.align-items-center
+                        .mr-2
+                            span.avatar.avatar-md.brround.cover-image(data-image-src='../assets/images/users/female/4.jpg')
+                        .user-name
+                            .font-weight-semibold Isidro Heide

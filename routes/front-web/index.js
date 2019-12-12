@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var master = require('../modules/master');
 var con = require('../modules/connection');
+var path = require('path');
 
 //=================================CLIENT SIDE================================//
 

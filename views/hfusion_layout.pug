@@ -15,6 +15,7 @@ html(lang="en", dir="ltr")
         link(href="/system/assets/css/style.css" rel="stylesheet")
         //- Custom Scroll bar css
         link(href="/system/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet")
+        
         //- Horizontal-menu css
         link(href="/system/assets/plugins/horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet")
         link(href="/system/assets/plugins/horizontal-menu/horizontalmenu.css" rel="stylesheet")
@@ -55,7 +56,7 @@ html(lang="en", dir="ltr")
                 
                 //- Sidebar Menu
                 if(isPatient)
-                    include fusion-system/_sidebar-menu.pug
+                    include fusion-system/_patient-menu.pug
 
                 //- Header Submenu
                 include fusion-system/_header-submenu.pug
@@ -125,8 +126,10 @@ html(lang="en", dir="ltr")
         script(src="/system/assets/plugins/rating/jquery.rating-stars.js")
         //- Daterangepicker js
         script(src="/system/assets/plugins/bootstrap-daterangepicker/daterangepicker.js")
+        
         //- Horizontal Menu
         script(src="/system/assets/plugins/horizontal-menu/horizontalmenu.js")
+        
         //- Sidemenu
         script(src="/system/assets/plugins/toggle-sidebar/sidemenu.js")
 

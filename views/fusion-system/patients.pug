@@ -9,10 +9,38 @@ block content
                     h4.card-title 
                     | Patient List  
                     .card-options 
-                        a(href="/hfusion/add-new-patient").btn.btn-primary.btn-sm
+                        a(href="/hfusion/add-new-patient").btn.btn-secondary.btn-sm
                             i.fa.fa-plus 
                             | ADD NEW PATIENT
 
-                .card-body
 
+                .table-responsive
+                    table.table.card-table.table-vcenter.text-nowrap.table-nowrap
+                        thead.bg-primary.text-white  
+                            tr 
+                                th MR# 
+                                th Name 
+                                th DOB 
+                                th Primary Dx   
+                                th Medical Director  
+                                th Referring MD    
+                                th SOC   
+                                th EOC  
+                                th Discharge Reason  
+                                th Care Days   
+                        tbody  
+                            each patient in patients 
+                                tr     
+                                    td
+                                        a(href="/patient/"+patient.patient_no)
+                                            = patient.patient_mrno
+                                    th=patient.patient_lastname+" "+patient.patient_firstname+" "+patient.patient_middlename
+                                    th=patient.dob   
+                                    th Prim Dx
+                                    th MD Director 
+                                    th RF MD 
+                                    th SOC  
+                                    th EOC  
+                                    th Discharge Rs  
+                                    th Care Days 
                 .card-footer
