@@ -7,7 +7,7 @@
     width: auto;
     height: 70vh;
     /*border: solid 1px black;*/
-    z-index: 999;
+    z-index: 777;
 }
 
 /*Close Sign*/
@@ -18,7 +18,7 @@
 .fusion-loading{
     display:    none;
     position:   fixed;
-    z-index:    222;
+    z-index:    999;
     top:        0;
     left:       0;
     height:     100%;

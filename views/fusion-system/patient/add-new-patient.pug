@@ -7,6 +7,10 @@ block content
             h4.card-title Add New Patient 
         form(action="/patient/save-new-patient" method="post")
             .card-body  
+                if(isExist)
+                    .alert.alert-warning(role="alert")
+                        button.close(data-dismiss="alert", aria-hidden="true")
+                        | MR# is Already Exist, Please try another one.
                 .row 
                     .col-sm-4.col-md-4 
                         label(for="mrno") MR#

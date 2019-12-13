@@ -7,10 +7,11 @@
             // logo
             if(!isPatient)
                 a#horizontal-navtoggle.animated-arrow.hor-toggle
+                    span
+            
             if(isPatient)
                 a.app-sidebar__toggle(aria-label='Hide Sidebar', data-toggle='sidebar', href='#')
-                
-                span
+                    span
             a.nav-link.nav-link.navsearch(href='#', data-toggle='search')
                 i.fa.fa-search
             // search icon

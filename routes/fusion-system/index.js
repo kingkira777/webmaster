@@ -95,16 +95,20 @@ router.get('/human-resources',function(req,res,next){
 
 
 //=============================ADD PRIMARY REQUEST===================================//
-router.get('/add-new-patient',function(req,res,next){
-    if(!req.session.clientno)
+router.get('/add-new-patient?',function(req,res,next){
+    if(!req.session.clientno){
         res.redirect('/');
         res.end();
-
-    res.render('fusion-system/patient/add-new-patient',{
-        title : 'Add New Patient', 
-        isPatients : 'active',
-        email : req.session.email
-    });
+    }else{
+        res.render('fusion-system/patient/add-new-patient',{
+            title : 'Add New Patient', 
+            isPatients : 'active',
+            email : req.session.email,
+            isPatient : false,
+            isExist : (req.query.exist)? true : false
+        });
+        res.end();
+    }
 });
 
 

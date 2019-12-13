@@ -58,9 +58,10 @@ router.get('/delete-patient?', function (req, res, next) {
 //Save new patient
 router.post('/save-new-patient', function (req, res, next) {
 
-    if(!req.session.clientno)
+    if(!req.session.clientno){
         res.redirect('/');
         res.end();
+    }
 
 
     var clientno = req.session.clientno;
@@ -80,9 +81,8 @@ router.post('/save-new-patient', function (req, res, next) {
 
     check_mrno_ifexsit(mrno).then((x) => {
         if (x) {
-            res.json({
-                message: 'exist'
-            });
+            res.redirect('/hfusion/add-new-patient?exist=true');
+            res.end();
         } else {
             var s = `INSERT INTO patients(client_no, patient_no, patient_mrno, patient_firstname, 
                              patient_lastname, patient_middlename, patient_dob, patient_ssn, patient_phone, 
@@ -99,7 +99,7 @@ router.post('/save-new-patient', function (req, res, next) {
                         message : err
                     });
                 }
-                res.send("Save");
+                res.redirect('/hfusion/patients');
                 res.end();
             });
         }
