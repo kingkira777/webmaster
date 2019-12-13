@@ -2,4 +2,234 @@ extends ../../hfusion_layout.pug
 
 
 block content 
-    h1 Patient Demographics
+    .row 
+        .col-sm-4
+            .card
+                .card-header
+                    h3.card-title Patient Profile
+                .card-body
+                    .text-center
+                        .userprofile
+                            .userpic.brround
+                                img.userpicimg(src='/system/assets/images/users/female/5.jpg', alt='')
+                            h3.username.mb-2=patientinfo[0].patient_lastname+" "+patientinfo[0].patient_firstname+" "+patientinfo[0].patient_middlename
+                            p.mb-1=patientinfo[0].patient_address+" "+patientinfo[0].patient_city+" "+patientinfo[0].patient_state+" "+patientinfo[0].patient_zipcode
+
+                .card-footer
+                    ul.row.text-center.clearfix.mb-0
+                        li.col-sm-4
+                            span.text-dark.font-weight-bold 1,345
+                            p.text-muted.mb-0
+                                small Following
+                        li.col-sm-4
+                            span.text-dark.font-weight-bold 23,456
+                            p.text-muted.mb-0
+                                small Followers
+                        li.col-sm-4
+                            span.text-dark.font-weight-bold 52,678
+                            p.text-muted.mb-0
+                                small Likes
+            //- Files & Pictures
+            .card
+                .card-header
+                    h3.card-title Files & Pictures
+                .card-body.pt-3.pb-3
+                    .memberblock.mb-0
+                        .row
+                            .col-lg-4.col-md-4.col-sm-4.col-xs-4.pl-1.pr-1.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/male/32.jpg', alt='')
+                                    .memmbername Ajay Sriram
+                            .col-lg-4.col-md-4.col-sm-4.pl-1.pr-1.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/female/15.jpg', alt='')
+                                    .memmbername Rajesh Sriram
+                            .col-lg-4.col-md-4.col-sm-4.pl-1.pr-1.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/male/29.jpg', alt='')
+                                    .memmbername Manish Sriram
+                        .row
+                            .col-lg-4.col-md-4.col-sm-4.pl-1.pr-1.mb-0.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/female/26.jpg', alt='')
+                                    .memmbername John Sriram
+                            .col-lg-4.col-md-4.col-sm-4.pl-1.pr-1.mb-0.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/male/13.jpg', alt='')
+                                    .memmbername Chandra Amin
+                            .col-lg-4.col-md-4.col-sm-4.pl-1.pr-1.mb-0.m-t-5.m-b-5
+                                a.member(href='')
+                                    img(src='/system/assets/images/users/female/18.jpg', alt='')
+                                    .memmbername Julian	Knox
+
+        .col-sm-8
+            .card
+                .card-header
+                    h3.card-title Demographic
+                form#updatePatientInfoForm(action="/patient/update-patient-info/"+ patientinfo[0].patient_no method="post")        
+                    .card-body
+                        .row
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='mrno') MR#
+                                    input.form-control(type='text', name="mrno" value=(patientinfo)? patientinfo[0].patient_mrno : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='ssn') SSN
+                                    input.form-control#ssnMask(type='text', name="ssn" value=(patientinfo)? patientinfo[0].patient_ssn : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='dob') DOB
+                                    input.form-control.fc-datepicker(type='text', name="dob" value=(patientinfo)? patientinfo[0].patient_dob : '')
+
+                        .row
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='lastname') Last Name
+                                    input.form-control(type='text', name="lastname" value=(patientinfo)? patientinfo[0].patient_lastname : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='firstname') First Name
+                                    input.form-control(type='text', name="firstname" value=(patientinfo)? patientinfo[0].patient_firstname : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='middlename') Middle Name
+                                    input.form-control(type='text', name="middlename" value=(patientinfo)? patientinfo[0].patient_middlename : '')
+
+                        .form-group
+                            label(for='address') Address
+                            input.form-control(type='text', name="address" value=(patientinfo)? patientinfo[0].patient_address : '')
+
+                        .row 
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='city') City
+                                    input.form-control(type='text', name="city" value=(patientinfo)? patientinfo[0].patient_city : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='state') State
+                                    input.form-control(type='text', name="state" value=(patientinfo)? patientinfo[0].patient_state : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='zipcode') Zipcode
+                                    input#zipMask.form-control(type='text', name="zipcode" value=(patientinfo)? patientinfo[0].patient_zipcode : '')
+                        .row 
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='phone') Phone#
+                                    input.form-control#phoneMask(type='text', name="phone" value=(patientinfo)? patientinfo[0].patient_phone : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='cellno') Cell#
+                                    input.form-control#cellMask(type='text', name="cellno" value=(patientinfo)? patientinfo[0].patient_cellno : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='plang') Prim. Language
+                                    input.form-control(type='text', name="plang" value=(patientinfo)? patientinfo[0].patient_primlang : '')
+                        .row 
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='race') Race
+                                    input.form-control(type='text', name="race" value=(patientinfo)? patientinfo[0].patient_race : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='ethnicity') Ethnicity
+                                    input.form-control(type='text', name="ethnicity" value=(patientinfo)? patientinfo[0].patient_ethnicity : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='maritalstatus') Marital Status
+                                    input.form-control(type='text', name="maritalstatus" value=(patientinfo)? patientinfo[0].patient_maritalstatus : '')
+                        .row 
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='gender') Gender
+                                    select.form-control(name="gender")
+                                        option(value=(patientinfo)? patientinfo[0].patient_gender : '')=patientinfo[0].patient_gender
+                                        option(value="male") Male 
+                                        option(value="female") Female
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='religion') Religion
+                                    input.form-control(type='text', name="religion" value=(patientinfo)? patientinfo[0].patient_religion : '')
+                            .col-lg-4.col-md-12
+                                .form-group
+                                    label(for='denomination') Denomination
+                                    input.form-control(type='text', name="denomination" value=(patientinfo)? patientinfo[0].patient_denomination : '')
+                        .row 
+                            .col-lg-12.col-sm-12 
+                                .form-group 
+                                    label(for="specialins") Special Instructions
+                                    textarea(name="specialins", rows="5").form-control
+                                        =(patientinfo)? patientinfo[0].patient_instructions : ''
+
+                    .card-footer.text-right
+                        button(type="submit").btn.btn-primary   
+                            i.fa.fa-save 
+                            | Update
+
+
+    //- INSURANCE PANEL
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Insurance 
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#insurancePanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#insurancePanel 
+            | Insurance Body
+
+    //- Date of Service, Diagnosis & Allergies 
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Date of Service, Diagnosis & Allergies 
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#dsdaPanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#dsdaPanel
+            | Insurance Body
+
+    //- Place of Service (POS)
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Place of Service 
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#posPanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#posPanel 
+            | Insurance Body
+
+    //- Authorized Rep (AR) / Emergency Contact (EC)
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Authorized Rep (AR) / Emergency Contact (EC) 
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#arecPanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#arecPanel 
+            | Insurance Body
+
+    //- Venodrs
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Vendors 
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#vendorPanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#vendorPanel 
+            | Insurance Body
+    //- Mortuary Info
+    .expanel.expanel-primary 
+        .expanel-heading.clearfix  
+            | Mortuary Information
+            .float-right 
+                button.btn.btn-sm.btn-success(type='button', data-toggle='collapse', data-target='#mortuaryPanel', aria-expanded='true', aria-controls='collapse03')
+                    i.fa.fa-bars
+
+        .expanel-body.collapse#mortuaryPanel 
+            | Insurance Body
+

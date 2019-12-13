@@ -27,8 +27,10 @@ router.get('/patients',function(req,res,next){
         res.redirect('/');
         res.end();
     }else{
-        var gp = `SELECT * FROM patients ORDER BY patient_id DESC`;
-        con.query(gp,function(err,rs){
+        var gp = `SELECT * FROM patients 
+            WHERE client_no = ? ORDER BY patient_id DESC`;
+        var gpVal = [req.session.clientno];
+        con.query(gp,gpVal,function(err,rs){
             if(err)
                 res.json({
                     message : err,

@@ -53,6 +53,7 @@ router.post('/login-user',function(req,res,next){
                 if(isLogin){
                     req.session.clientno = rs[0].client_no;
                     req.session.email = rs[0].client_email;
+                    req.session.userno = rs[0].client_no; //Save user
                     res.redirect('/hfusion');
                     res.end();
                 }else{

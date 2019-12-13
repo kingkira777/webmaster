@@ -10,7 +10,9 @@ $(function(){
    // Input Masks
    $('#dateMask').mask('99/99/9999');
    $('#phoneMask').mask('(999) 999-9999');
+   $('#cellMask').mask('(999) 999-9999');
    $('#ssnMask').mask('999-99-9999');
+   $('#zipMask').mask('99999');
 
    // Time Picker
    $('#tpBasic').timepicker();

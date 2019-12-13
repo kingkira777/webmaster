@@ -5,40 +5,44 @@ block content
     .card
         .card-header 
             h4.card-title Add New Patient 
-        form(action="/patient/save-new-patient" method="post")
+            .card-options 
+                a(href="/hfusion/patients").btn.btn-danger.btn-sm
+                    i.fa.fa-list 
+                    | Patient List
+
+        form#addnewPatinetForm(action="/patient/save-new-patient" method="post")
             .card-body  
-                if(isExist)
-                    .alert.alert-warning(role="alert")
-                        button.close(data-dismiss="alert", aria-hidden="true")
-                        | MR# is Already Exist, Please try another one.
                 .row 
                     .col-sm-4.col-md-4 
                         label(for="mrno") MR#
-                        input(type="text" name="mrno").form-control.input-sm
+                        input(type="text" name="mrno" required).form-control.input-sm
                 .row  
                     .col-sm-4.col-md-4 
                         label(for="firstame") Firstname 
-                        input(type="text" name="firstname").form-control.input-sm
+                        input(type="text" name="firstname" required).form-control.input-sm
                     .col-sm-4.col-md-4 
                         label(for="lastname") Lastname 
-                        input(type="text" name="lastname").form-control.input-sm
+                        input(type="text" name="lastname" required).form-control.input-sm
                     .col-sm-4.col-md-4 
                         label(for="middlename") Middlename 
                         input(type="text" name="middlename").form-control.input-sm
                 .row  
                     .col-sm-4.col-md-4 
                         label(for="dob") DOB 
-                        input(type="text" name="dob").form-control.input-sm
+                        input(type="text" name="dob" required).form-control.fc-datepicker
                     .col-sm-4.col-md-4 
-                        label(for="phone") Phone 
+                        label(for="phone") Phone#
                         input(type="text" name="phone").form-control.input-sm
                     .col-sm-4.col-md-4 
-                        label(for="cellno") Cellno 
+                        label(for="cellno") Cell#
                         input(type="text" name="cellno").form-control.input-sm
                 .row  
                     .col-sm-4.col-md-4 
                         label(for="gender") Gender 
-                        input(type="text" name="gender").form-control.input-sm
+                        select(name="gender" required).form-control
+                            option(value="") Select-->
+                            option(value="male") Male 
+                            option(value="female") Female
                     .col-sm-4.col-md-4 
                         label(for="race") Race 
                         input(type="text" name="race").form-control.input-sm

@@ -2,12 +2,17 @@
 aside.app-sidebar.toggle-sidebar
     .app-sidebar__user.pb-0
         .user-body
-            span.avatar.avatar-xxl.brround.text-center.cover-image(data-image-src='../assets/images/users/female/33.png')
+            span.avatar.avatar-xxl.brround.text-center.cover-image(data-image-src='/system/assets/images/users/female/33.png')
         .user-info
             a.ml-2(href='#')
-                span.text-dark.app-sidebar__user-name.font-weight-semibold Jenna Side
+                span.text-dark.app-sidebar__user-name.font-weight-semibold=patientinfo[0].patient_lastname+" "+patientinfo[0].patient_firstname+" "+patientinfo[0].patient_middlename
                 br
-                span.text-muted.app-sidebar__user-name.text-sm  Web Designer
+                | GENDER: 
+                span.app-sidebar__user-name.text-sm=patientinfo[0].patient_gender
+                br 
+                | DOB: 
+                span.app-sidebar__user-name.text-sm=patientinfo[0].patient_dob
+                
     .tab-menu-heading.siderbar-tabs.border-0.p-0
         .tabs-menu
             // Tabs
