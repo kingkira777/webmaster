@@ -101,7 +101,8 @@ $(function () {
                 };
                 var renderTask = page.render(renderContext);
                 renderTask.promise.then(function () {
-
+                    
+                    $('body').removeClass('fusion');
                 });
             });
         }
