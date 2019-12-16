@@ -1,0 +1,42 @@
+extends ../../hfusion_layout
+
+block content
+    .card 
+        .card-header
+            h4.card-title 
+                | Nursing Assessment
+
+        .card-body
+            .row 
+                .col-sm-3 
+                    label(for="enteredby") Entered By
+                    input(type="text" name="enteredby").form-control
+                .col-sm-3
+                    label(for="staff") Staff Assign
+                    input(type="text" name="staff").form-control
+                .col-sm-3
+                    label(for="discipline") Discipline 
+                    input(type="text" name="discipline").form-control
+            .row 
+                .col-sm-3 
+                    label(for="enteredby") Entered By
+                    input(type="text" name="enteredby").form-control
+                .col-sm-3
+                    label(for="staff") Staff Assign
+                    input(type="text" name="staff").form-control
+                .col-sm-3
+                    label(for="visitdate") Discipline 
+                    input(type="text" name="visitdate").form-control
+            .row
+                .col-sm-3 
+                    label(for="visitdate") Visit Date
+                    input(type="text" name="visitdate").form-control.fc-datepicker
+                .col-sm-3 
+                    label(for="timein") Time In
+                    input#tpBasic(type="text" name="timein").form-control
+                .col-sm-3
+                    label(for="timeout") Time Out
+                    input(type="text" name="timeout").form-control
+                .col-sm-3
+                    label(for="duration") Duration 
+                    input(type="text" name="duration").form-control

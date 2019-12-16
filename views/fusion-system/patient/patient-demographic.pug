@@ -7,24 +7,28 @@ block content
             .card
                 .card-header
                     h3.card-title Patient Profile
+                    
                 .card-body
                     .text-center
                         .userprofile
-                            .userpic.brround
-                                img.userpicimg(src='/system/assets/images/users/female/5.jpg', alt='')
+                            form#uploadImg(action="/patient/upoad-patient-image/"+ patientinfo[0].patient_no method="post" enctype="multipart/form-data")
+                                input.dropify(type='file' name="file" id="file" data-default-file=(patientinfo[0].img_path)?"/"+patientinfo[0].img_path : '/system/assets/images/photos/1.jpg')
+                                button(type="submit").btn.btn-success.btn-sm Upload Image
+                                
+
                             h3.username.mb-2=patientinfo[0].patient_lastname+" "+patientinfo[0].patient_firstname+" "+patientinfo[0].patient_middlename
                             p.mb-1=patientinfo[0].patient_address+" "+patientinfo[0].patient_city+" "+patientinfo[0].patient_state+" "+patientinfo[0].patient_zipcode
-
+                    
                 .card-footer
                     ul.row.text-center.clearfix.mb-0
                         li.col-sm-4
                             span.text-dark.font-weight-bold 1,345
                             p.text-muted.mb-0
-                                small Following
+                                small Medications
                         li.col-sm-4
                             span.text-dark.font-weight-bold 23,456
                             p.text-muted.mb-0
-                                small Followers
+                                small Visits
                         li.col-sm-4
                             span.text-dark.font-weight-bold 52,678
                             p.text-muted.mb-0

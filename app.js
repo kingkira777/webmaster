@@ -12,7 +12,13 @@ var docusignRouter = require('./routes/docusign/docusign');
 var fusionRouter = require('./routes/fusion-system/index');
 var docusignV2Router = require('./routes/docusignV2/docusign');
 
+//Patient
 var patientRouter = require('./routes/fusion-system/patient/patient');
+
+//Assessment 
+var nursingRouter = require('./routes/fusion-system/assessment/nursing-assessment');
+var psychosocialRouter = require('./routes/fusion-system/assessment/psychosocial-assessment');
+var spiritualRouter = require('./routes/fusion-system/assessment/spiritual-assessment');
 
 
 
@@ -51,7 +57,10 @@ app.use('/hfusion',fusionRouter);
 //Patient
 app.use('/patient', patientRouter);
 
-
+//Assessment
+app.use('/patient/nursing-assessment',nursingRouter);
+app.use('/psychosocial-assessment',psychosocialRouter);
+app.use('/spiritual-assessment',spiritualRouter);
 
 
 // catch 404 and forward to error handler

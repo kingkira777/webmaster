@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const master = require('../../modules/master');
 const con = require('../../modules/connection');
+const fs = require('fs');
+const xpath = require('path');
 
 
 // ===================================GET REQUEST =================================//
@@ -11,7 +13,9 @@ router.get('/(:patientno)', function (req, res, next) {
         res.end();
     }else{
         var patientInfo = [];
-        var pinfo = `SELECT * FROM  patients WHERE client_no = ? AND patient_no = ?`;
+        var pinfo = `SELECT * FROM  patients a
+            LEFT JOIN images b on a.patient_no = b.img_no
+            WHERE a.client_no = ? AND a.patient_no = ?`;
         var pinfoVal = [req.session.clientno, req.params.patientno];
 
         con.query(pinfo,pinfoVal,function(err,rs){
@@ -70,6 +74,65 @@ router.get('/delete-patient?', function (req, res, next) {
 
 
 // ===================================POST REQUEST =================================//
+
+
+//Upload Patient Image
+router.post('/upoad-patient-image/(:patientno)',function(req,res,next){
+    if(!req.session.clientno){
+        res.redirect('/');
+        res.end();
+    } 
+
+    if(!req.files || Object.keys(req.files).length === 0){
+        res.status(400).send('No Image File Were Uploaded');
+    }
+
+    var path = "files/"+req.session.clientno;
+    if(!fs.existsSync(path)){
+        fs.mkdirSync(path);
+    }
+    var path1 = "files/"+req.session.clientno+"/patient-images"
+    if(!fs.existsSync(path1)){
+        fs.mkdirSync(path1);
+    }
+
+    var file = req.files.file;
+
+    var filename = req.files.file.name;
+
+    var targetFile = path1+"/"+filename;
+    var savePath = req.session.clientno+"/patient-images/"+filename;
+
+    file.mv(targetFile,function(er){
+        if(er) throw er;
+
+        var c = `SELECT * FROM images WHERE img_no = ?`;
+        var cVal = [req.params.patientno];
+        con.query(c,cVal,function(x,xrs){
+            if(x) throw x;
+            if(xrs.length != 0){
+                var u = `UPDATE images SET img_path = ? WHERE img_no = ?`;
+                var uVal = [savePath, req.params.patientno];
+                con.query(u,uVal,function(x1, xrs1){
+                    if(x1) throw x1;
+                    res.redirect('/patient/'+req.params.patientno);
+                    res.end();
+                });
+            }
+            if(xrs.length == 0){
+                var s = `INSERT INTO images(img_no, img_path) VALUES ?`;
+                var rs = [[req.params.patientno, savePath]];
+                con.query(s,[rs],function(err,rs){
+                    if(err) throw err;
+                    res.redirect('/patient/'+req.params.patientno);
+                    res.end();
+                });
+            }
+        });
+        
+    });
+
+});
 
 
 //Update Patient Info
