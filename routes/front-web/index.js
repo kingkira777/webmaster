@@ -4,6 +4,18 @@ var master = require('../modules/master');
 var con = require('../modules/connection');
 var path = require('path');
 
+
+
+//===================BDHOSPICE REDIRECT================================//
+router.get('/hospicebd',function(req,res,next){
+    res.writeHead(301,{
+        Location: 'https://bdhospice.hospicefusion.com'
+    });
+    res.end();
+});
+
+
+
 //=================================CLIENT SIDE================================//
 
 //Home Page 

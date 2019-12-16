@@ -12,22 +12,16 @@ router.get('/(:patientno)', function (req, res, next) {
         res.redirect('/');
         res.end();
     }else{
-        var patientInfo = [];
-        var pinfo = `SELECT * FROM  patients a
-            LEFT JOIN images b on a.patient_no = b.img_no
-            WHERE a.client_no = ? AND a.patient_no = ?`;
-        var pinfoVal = [req.session.clientno, req.params.patientno];
 
-        con.query(pinfo,pinfoVal,function(err,rs){
+        master.patient_profile_info(req.params.patientno, req.session.clientno).then((x)=>{
+            
             res.render('fusion-system/patient/patient-demographic',{ 
                 title : 'Patient Demographic',
                 isPatient : true,
-                patientinfo : rs
+                patientinfo : x
             });
             res.end();
         });
-     
-
     }
 });
 

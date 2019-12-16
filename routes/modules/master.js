@@ -2,10 +2,33 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
 const uuidV4 = require('uuid/v4');
+const con = require('./connection');
 
+//GLOBAL FUNCTIONS===============
 var master = {  
 
-    //Send Email
+
+    //Patient =================================================
+
+    patient_profile_info : function(_patientno,_clientno){
+        var info = `SELECT * FROM patients a
+            LEFT JOIN images b on a.patient_no = b.img_no
+            WHERE a.patient_no = ? AND a.client_no = ?`;
+        var infoVal = [_patientno, _clientno];
+        return new Promise((resolve)=>{
+            con.query(info,infoVal,function(err,rs){
+                if(err) throw err;
+                resolve(rs);
+            });
+        });
+    },
+    //Patient =================================================
+
+
+
+
+
+    //Send Email ==============================================
     send_email : function(){
         var transporter = nodemailer.createTransport({
             host : 'hospicefusion.com',
@@ -32,11 +55,11 @@ var master = {
                 resolve(info);
             });
         });
-
-
     },
+    
+    //Send Email ==============================================
 
-    //Get the Current Date
+    //Get the Current Date=====================================
     get_currentdate : function(){
         let ts = Date.now();
         let date_ob = new Date(ts);
