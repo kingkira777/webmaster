@@ -14,9 +14,10 @@ router.get('/(:patientno)', function (req, res, next) {
     }else{
 
         master.patient_profile_info(req.params.patientno, req.session.clientno).then((x)=>{
-            
+
             res.render('fusion-system/patient/patient-demographic',{ 
                 title : 'Patient Demographic',
+                email : req.session.email,
                 isPatient : true,
                 patientinfo : x
             });

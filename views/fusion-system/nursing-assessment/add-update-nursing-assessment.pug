@@ -1,42 +1,262 @@
 extends ../../hfusion_layout
 
 block content
+    .right-button-container
+        button.btn.btn-success.btn-md 
+            i.fa.fa-save 
+            | Save
+        
     .card 
         .card-header
-            h4.card-title 
-                | Nursing Assessment
+            h4.card-title
+                i.fa.fa-plus 
+                | Add/Update Nursing Assessment
+            .card-options 
+                .card-options 
+                        a(href="/patient/nursing-assessment/"+patientinfo[0].patient_no).btn.btn-danger.btn-sm
+                            i.fa.fa-list 
+                            | Nursing Assessment List
 
         .card-body
             .row 
                 .col-sm-3 
-                    label(for="enteredby") Entered By
-                    input(type="text" name="enteredby").form-control
+                    label(for="enteredby") Entered By 
+                    input.ipt-sm(type="text" name="enteredby")
                 .col-sm-3
-                    label(for="staff") Staff Assign
-                    input(type="text" name="staff").form-control
+                    label(for="staff") Staff Assign 
+                    select.ipt-sm.select2(name="staff")
+                        option(value="") Select-->
                 .col-sm-3
-                    label(for="discipline") Discipline 
-                    input(type="text" name="discipline").form-control
+                    label(for="discipline") Discipline  
+                    select.ipt-sm.select2(name="discipline")
+                        option(value="") Select-->
             .row 
                 .col-sm-3 
-                    label(for="enteredby") Entered By
-                    input(type="text" name="enteredby").form-control
+                    label(for="typeof") Type Of 
+                    select.ipt-sm(name="typeof")
+                        option(value="") Select-->
+                        option(value="inperson") In-Person 
+                        option(value="Telephone") Telephone 
+
                 .col-sm-3
-                    label(for="staff") Staff Assign
-                    input(type="text" name="staff").form-control
+                    label(for="visit") Visit 
+                    select.ipt-sm(name="visit")
+                        option(value="") Select-->
+                        option(value="scheduled") Scheduled 
+                        option(value="unscheduled") Unscheduled 
+                        option(value="prn") PRN 
                 .col-sm-3
-                    label(for="visitdate") Discipline 
-                    input(type="text" name="visitdate").form-control
+                    label(for="specify") Specify 
+                    input(type="text" name="specify").ipt-sm
+                .col-sm-3
+                    label(for="reasonforas") Reason For Assessment 
+                    select.ipt-sm(name="reasonforas")
+                        option(value="") Select--> 
+                        option(value="update") Update 
+                        option(value="recert") Re-Cert 
             .row
-                .col-sm-3 
+                .col-sm-2 
                     label(for="visitdate") Visit Date
-                    input(type="text" name="visitdate").form-control.fc-datepicker
-                .col-sm-3 
+                    input(type="text" name="visitdate").fc-datepicker.ipt-sm
+                .col-sm-2
                     label(for="timein") Time In
-                    input#tpBasic(type="text" name="timein").form-control
-                .col-sm-3
+                    input(type="text" name="timein").ipt-sm.timeFormat
+                .col-sm-2
                     label(for="timeout") Time Out
-                    input(type="text" name="timeout").form-control
-                .col-sm-3
+                    input(type="text" name="timeout").ipt-sm.timeFormat
+                .col-sm-2
                     label(for="duration") Duration 
-                    input(type="text" name="duration").form-control
+                    input(type="text" name="duration" disabled).ipt-sm
+            
+            br  
+            
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Pain Screening 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#painPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#painPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Vitals & Measurements 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#vitalsMeasurePanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#vitalsMeasurePanel
+                    p Pain Panel
+            
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Communications & Other Factors 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#commufactorsPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#commufactorsPanel
+                    p Pain Panel
+
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Primary / Secondary Diagnosis & Comorbidities
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#diagcomorPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#diagcomorPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | KPS/PPS/FAST/NYHA Score effecting ADL? 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#adlPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#adlPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Nature & Conditions of Termininal Illness / LCD Eligibility 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#eligibilityPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#eligibilityPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Body System (Head-to-Toe) 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#bodysysPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#bodysysPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Environmental / Safety 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#envisafetyPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#envisafetyPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Personal Care & Support Needs 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#personalneedsPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#personalneedsPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Teaching Needs 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#teachingPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#teachingPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Psychosocial Screening 
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#psychosocialPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#psychosocialPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Spiritual Screening (Required HIS)
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#spiritualPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#spiritualPanel
+                    p Pain Panel
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Bereavement Screening
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#bereavePanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#bereavePanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Referral
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#referralPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#referralPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Supervisory Notes (If Applicable)
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#supervisoryPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#supervisoryPanel
+                    p Pain Panel
+            
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Care Provider
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#careproPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#careproPanel
+                    p Pain Panel
+
+
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Narrative & Disease Trajectory
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#narrativePanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#narrativePanel
+                    p Pain Panel
+
+            
+            .expanel.expanel-default   
+                .expanel-heading.clearfix 
+                    | Amission Order
+                    .float-right 
+                        button.btn.btn-sm.btn-info.collapsed(type='button', data-toggle='collapse', data-target='#admissionPanel', aria-expanded='false', aria-controls='collapse06')
+                            i.fa.fa-bars
+
+                .expanel-body.collapse#admissionPanel
+                    p Pain Panel

@@ -2121,7 +2121,7 @@ pre code {
     background-clip: padding-box;
     border: 1px solid rgba(107,122,144,0.1);
 }
-.select2-container--default .select2-selection--single {
+/* .select2-container--default .select2-selection--single {
 	background-color: #f4f3f9;
 	border: 1px solid # #eceaf7 !important;
 }
@@ -2161,7 +2161,7 @@ pre code {
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: #f4f3f9 !important;
     border: 1px solid #f4f3f9 !important;
-}
+} */
 @media screen and (prefers-reduced-motion: reduce) {
 	
 }
@@ -2200,7 +2200,7 @@ pre code {
 	background-color: #ebeaf1;
 	opacity: 1;
 }
-select.form-control:not([size]):not([multiple]) {
+/* select.form-control:not([size]):not([multiple]) {
 	height: 2.375rem;
 }
 .select2-container .select2-selection--single {
@@ -2216,7 +2216,7 @@ select.form-control:not([size]):not([multiple]) {
 select.form-control:focus::-ms-value {
 	color: #495057;
 	background-color: #fff;
-}
+} */
 .form-control-file, .form-control-range {
 	display: block;
 	width: 100%;
