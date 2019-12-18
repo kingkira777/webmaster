@@ -16,7 +16,7 @@ router.get('/(:patientno)',function(req,res,next){
     }else{
         master.patient_profile_info(req.params.patientno, req.session.clientno).then((x)=>{
             res.render('fusion-system/nursing-assessment/nursing-assessment-list',{ 
-                title : 'Patient Demographic',
+                title : 'Nursing Assessment List',
                 email : req.session.email,
                 isPatient : true,
                 patientinfo : x
