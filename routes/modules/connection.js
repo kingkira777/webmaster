@@ -24,7 +24,7 @@ function Connetion(){
     //TRIUNION DATABASE 
 
     con = mysql.createPool({
-        host : '148.72.232.128',
+        host : '148.72.202.211',
         user : 'master',
         password : '*Master7!',
         database :  'master'
