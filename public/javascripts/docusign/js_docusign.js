@@ -75,6 +75,14 @@ $(function () {
     loadingTask.promise.then(function (pdf) {
         var pdf_container = document.getElementById('pdf-content');
         var pageNumber = pdf.numPages + 1;
+        if(pageNumber > 45){
+            swal('Pages  Exceed', 'PDF must be less than 40 pages, the current PDF pages is: '+ pageNumber, 'warning');
+            $('body').removeClass('fusion');
+            return;
+        }
+            
+
+
 
         for (var i = 1; i < pageNumber; i++) {
 
@@ -112,6 +120,7 @@ $(function () {
         }, 300);
     }, function (reason) {
         console.log(reason);
+        swal('Missing', 'PDF file is Missing from the server', 'warning');
     });
 
     //Load all Signed
@@ -293,14 +302,11 @@ $(function () {
         var canvas_width = $('canvas').width();
         var canvas_height = $('canvas').height();
 
-        setTimeout(function () {
-            html2canvas($('#pdf-content')[0],{ 
-                scale : 1,
-                width : canvas_width
-                // allowTaint: false,
-                // letterRendering: true
-            }).then(function (canvas) {
+        
 
+        setTimeout(function () {
+            html2canvas($('#pdf-content')[0]).then(function (canvas) {
+                
                 var totalPages = Math.ceil(container_height / canvas_height) - 1;
                 var imgData = canvas.toDataURL("image/jpeg",1.0);
                 var pdf = new jsPDF('p', 'pt', 'a4');

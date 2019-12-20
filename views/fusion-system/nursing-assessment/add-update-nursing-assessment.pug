@@ -13,17 +13,10 @@ block content
                             | Nursing Assessment List
 
         .card-body
-            form(action="#" method="post")
-                .right-button-container
-                    button.btn.btn-success.btn-md 
-                        i.fa.fa-save 
-                        | Save
-                    | 
-                    //- button.btn.btn-danger.btn-md 
-                    //-     i.fa.fa-trash 
-                    //-     | DELETE
+            form(action="/patient/nursing-assessment/"+patientinfo[0].patient_no+"/save-update-nursing-assessment" method="post")
+                
         
-                .row 
+                .row.bg-info
                     .col-sm-3 
                         label(for="enteredby") Entered By 
                         input.ipt-sm(type="text" name="enteredby")
@@ -35,7 +28,7 @@ block content
                         label(for="discipline") Discipline  
                         select.ipt-sm.select2(name="discipline")
                             option(value="") Select-->
-                .row 
+                .row.bg-info
                     .col-sm-3 
                         label(for="typeof") Type Of 
                         select.ipt-sm(name="typeof")
@@ -59,7 +52,7 @@ block content
                             option(value="") Select--> 
                             option(value="update") Update 
                             option(value="recert") Re-Cert 
-                .row
+                .row.bg-info
                     .col-sm-2 
                         label(for="visitdate") Visit Date
                         input(type="text" name="visitdate").fc-datepicker.ipt-sm
@@ -83,7 +76,42 @@ block content
                                 i.fa.fa-bars
 
                     .expanel-body.collapse#painPanel
-                        p Pain Panel
+                        p 
+                            | Is the patient alert, oriented and able to verbalize pain? 
+                            label(for="pain")
+                                input(type="radio" name="pain")
+                                |   Yes
+                            | 
+                            label(for="pain")
+                                input(type="radio" name="pain") 
+                                |   No
+
+                        p 
+                            | Is patient uncomfortable because of pain? 
+                            label(for="pain1")
+                                input(type="radio" name="pain1")
+                                |   Yes 
+                            | 
+                            label(for="pain1")
+                                input(type="radio" name="pain1")
+                                |   No    
+                            | 
+                            label(for="pain1")
+                                input(type="radio" name="pain1")
+                                |   Unwilling 
+                            |   
+                            label(for="pain1")
+                                input(type="radio" name="pain1")
+                                |   Unable    
+                            | 
+                            a(href="#")
+                                |   OPEN PAIN ASSESSMENT
+                        
+                        p
+                            u Answer applicable question on Pain Assessment, even if no pain reported. (Required for HIS)
+
+                        
+
 
 
 
@@ -96,7 +124,34 @@ block content
                                 i.fa.fa-bars
 
                     .expanel-body.collapse#vitalsMeasurePanel
-                        p Pain Panel
+                        .row
+                            .col-sm-2 
+                                label(for="temp") Temp 
+                                input(type="text" name="temp").ipt-sm
+                            .col-sm-2
+                                label(for="pulse") Pulse 
+                                input(type="text" name="pulse").ipt-sm
+                            .col-sm-2 
+                                label(for="resp") Resp 
+                                input(type="text" name="resp").ipt-sm
+                            .col-sm-2
+                                label(for="bp") BP 
+                                input(type="text" name="bp").ipt-sm
+                            .col-sm-2 
+                                label(for="height") Ht(inch) 
+                                input(type="text" name="height").ipt-sm
+                            .col-sm-2
+                                label(for="weigth") Wt(lbs) 
+                                input(type="text" name="weigth").ipt-sm
+                            .col-sm-2
+                                label(for="bmi") BMI
+                                input(type="text" name="bmi" readonly).ipt-sm
+                            .col-sm-2 
+                                label(for="mac") Mac(cm) 
+                                input(type="text" name="mac").ipt-sm
+                            .col-sm-2 
+                                label(for="sat02") 02 Sat
+                                input(type="text" name="sat02").ipt-sm
                 
                 
                 //- COMMUNICATION & OTHER FACTORS =============================
@@ -108,7 +163,142 @@ block content
                                 i.fa.fa-bars
 
                     .expanel-body.collapse#commufactorsPanel
-                        p Pain Panel
+                        
+                        .panel.panel-primary
+                            .tab-menu-heading
+                                .tabs-menu1
+                                    // Tabs
+                                    ul.nav.panel-tabs
+                                        li
+                                            a.active(href='#patient', data-toggle='tab') Patient
+                                        li
+                                            a(href='#pcg', data-toggle='tab') PCG 
+                                        li
+                                            a(href='#envi', data-toggle='tab') Environmental
+                                        li
+                                            a(href='#mobility', data-toggle='tab') Mobility
+                                        li
+                                            a(href='#adl', data-toggle='tab') ADL Assessment
+                                        li
+                                            a(href='#dme', data-toggle='tab') DME Device
+                                        li
+                                            a(href='#iv', data-toggle='tab') IV Assessment
+                                        
+                            .panel-body.tabs-menu-body
+                                .tab-content
+                                    #patient.tab-pane.active
+                                        .row 
+                                            .col-md-8
+                                                p 
+                                                | (If patient is unable to answer, PCG can answer)
+                                                input(type="text" name="patient_01").ipt-sm
+                                            .col-sm-4 
+                                                label(for="patient_02")
+                                                    input(type="checkbox" name="patient_02") 
+                                                    | No Limitations
+                                        hr 
+                                        .row 
+                                            .col-md-8 
+                                                | Site of Service at Admission:
+                                            .col-md-4
+                                                .form-group.has-success
+                                                    select.ipt-sm
+                                                        option(value="") Required for HIS--> 
+                                        .row  
+                                            .col-md-8
+                                                | Admitted From (Immediately preceeding admission, where was the Patient?)
+                                            .col-md-4
+                                                .form-group.has-success
+                                                    select.ipt-sm
+                                                        option(value="") Required for HIS--> 
+                                        .row 
+                                            .col-md-8 
+                                                | CPR Preference(DNR/Code Status)?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm
+                                                        option(value="") Required for HIS--> 
+                                        .row 
+                                            .col-md-8 
+                                                | Wants Other Life-Sustaining Treatment Preferences (Other than CPR)
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm 
+                                                        option(value="") Required for HIS-->  
+                                        .row 
+                                            .col-md-8   
+                                                | Does Pt/Family want to avoid hospitalization?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm.aler-success
+                                                        option(value="") Select-->
+                                        .row 
+                                            .col-md-8 
+                                                | Any special event/ desire for patient before dying?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm 
+                                                        option(value="") Select--> 
+                                        .row 
+                                            .col-md-8 
+                                                | Able to understand and participate in own care?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+                                        .row 
+                                            .col-md-8 
+                                                | Is there a need for an interpreter?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+                                        .row 
+                                            .col-md-8 
+                                                | If Yes, offer of interpreter
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+                                        .row 
+                                            .col-md-8 
+                                                | Has Patient/Spouse served in the military?
+                                            .col-md-4
+                                                .form-group.has-success 
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+
+                                        .row 
+                                            .col-md-8 
+                                                | Is Patient able to safely administer meds?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+                                        
+                                        .row 
+                                            .col-md-8 
+                                                | If No, who is able to safely administer meds to Patient?
+                                            .col-md-4 
+                                                .form-group.has-success
+                                                    select.ipt-sm  
+                                                        option(value="") Select--> 
+                                                    input(type="text" placeholder="Others").ipt-sm
+                                        
+                                        
+                                    #pcg.tab-pane
+                                        p TAB 2
+                                    #envi.tab-pane
+                                        p TAB 3
+                                    #mobility.tab-pane
+                                        p TAB 4
+                                    #adl.tab-pane
+                                        p TAB 5
+                                    #dme.tab-pane
+                                        p TAB 6
+                                    #iv.tab-pane
+                                        p TAB 7
+                               
 
 
                 //- PRIMARY / SECONDARY DIAGNOSIS & COMORBODITIES =============
@@ -287,3 +477,14 @@ block content
 
                     .expanel-body.collapse#admissionPanel
                         p Pain Panel
+
+
+                
+                .right-button-container
+                    button(type="submit").btn.btn-success.btn-md 
+                        i.fa.fa-save 
+                        | Save
+                    | 
+                    //- button.btn.btn-danger.btn-md 
+                    //-     i.fa.fa-trash 
+                    //-     | DELETE

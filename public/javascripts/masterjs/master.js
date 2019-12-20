@@ -1,9 +1,12 @@
 
-// TIME ENTRY
 $(function(){
 
 
-    $('.timeFormat').timeEntry();
+    // timeEntry ======================================
+    $('.timeFormat').timeEntry({ampmPrefix: ' '});
+
+
+    
 
 
 });

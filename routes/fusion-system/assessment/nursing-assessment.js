@@ -62,4 +62,45 @@ router.get('/(:patientno)/add-update-nursingassessment/',function(req,res,next){
 
 
 
+
+
+
+//===============================POST REQUEST===============================//
+
+
+
+router.post('/(:patientno)/save-update-nursing-assessment?',function(req,res,next){
+
+    if(!req.session.clientno){
+        res.redirect('/');
+        res.end();
+    }
+
+    // Foriegn Key DUDE!
+    var clientno = req.session.clientno;
+    var patientno = req.params.patientno;
+    var assessmentno = req.query.assessmentno;
+
+    
+    formData = req.body;
+
+    res.json(formData);
+    res.end();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

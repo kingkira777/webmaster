@@ -20,6 +20,10 @@ router.get('/hospicebd',function(req,res,next){
 
 //Home Page 
 router.get('/',function(req,res,next){
+    if(req.session.clientno){
+        res.redirect('/hfusion');
+        res.end();
+    }
     res.render('front-web/index',{title: 'Hospice Fusion', isHome :true});
     res.end();
 });
