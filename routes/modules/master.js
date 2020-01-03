@@ -4,11 +4,27 @@ const bcrypt = require('bcryptjs');
 const uuidV4 = require('uuid/v4');
 const con = require('./connection');
 
+
 //GLOBAL FUNCTIONS===============
 var master = {  
 
 
     //Patient =================================================
+
+    patient_info : function(req,res,next){
+        console.log("Clientno: "+ req.session.clientno+ " Patientno: "+ req.params.patientno);
+        var patientinfo = [];
+        var info = `SELECT * FROM patients a
+            LEFT JOIN images b on a.patient_no = b.img_no
+            WHERE a.patient_no = ? AND a.client_no = ?`;
+        var infoVal = [req.params.patientno, req.session.clientno];
+        con.query(info,infoVal,function(err,rs){
+            if(err) throw err;
+            patientinfo = rs 
+        });
+        next();
+    },
+
 
     patient_profile_info : function(_patientno,_clientno){
         var info = `SELECT * FROM patients a

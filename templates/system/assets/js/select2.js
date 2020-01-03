@@ -48,10 +48,13 @@ $(function(){
    'use strict'
    // Datepicker
    $('.fc-datepicker').datepicker({
-	 showOtherMonths: true,
-	 selectOtherMonths: true,
+      format: "dd/mm/yyyy",
+	   showOtherMonths: true,
+      selectOtherMonths: true,
+      todayHighlight: true,
+      container : '#painAssessmentModal'
    });
-   $('.fc-datepicker').datepicker( "option", "dateFormat", 'mm/dd/yy');
+   // $('.fc-datepicker').datepicker( "option", "dateFormat", 'mm/dd/yy');
 
    $('#datepickerNoOfMonths').datepicker({
 	 showOtherMonths: true,

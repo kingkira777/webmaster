@@ -1,0 +1,23 @@
+p
+    strong
+        | Evidenced disease likely to contribute to life expectancy of 6 months or less.
+
+.row 
+    .col-sm-8 
+        label(for="primdiag") Primary Diagnosis 
+        input(type="text" name="primdiag").ipt-sm      
+
+    .col-sm-4 
+        label(for="primdisease") Primary Disease 
+        select(name="primdisease").ipt-sm
+            option(value="") Select-->
+
+
+    .col-sm-12 
+        label(for="seconddx") Secondary Dx: 
+            i (Related)
+        input(type="text" name="seconddx").ipt-sm
+    .col-sm-12 
+        label(for="comor") Comorbidities 
+            i (Unrelated Dx) 
+        input(type="text" name="comor").ipt-sm

@@ -22,3 +22,8 @@
     top: 10%;
     z-index: 222;
 }
+
+/* Date Picker */
+.fc-datepicker{
+    z-index: 2600 !important;
+}

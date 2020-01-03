@@ -1,0 +1,33 @@
+p 
+    | Is the patient alert, oriented and able to verbalize pain? 
+    label(for="pain")
+        input(type="radio" name="pain" value="yes")
+        |   Yes
+    | 
+    label(for="pain")
+        input(type="radio" name="pain" value="no") 
+        |   No
+
+p 
+    | Is patient uncomfortable because of pain? 
+    label(for="pain1")
+        input(type="radio" name="pain1" value="yes")
+        |   Yes 
+    | 
+    label(for="pain1")
+        input(type="radio" name="pain1" value="no")
+        |   No    
+    | 
+    label(for="pain1")
+        input(type="radio" name="pain1" value="unwilling")
+        |   Unwilling 
+    |   
+    label(for="pain1")
+        input(type="radio" name="pain1")
+        |   Unable    
+    | 
+    a(href="#painAssessmentModal" data-toggle="modal")
+        |   OPEN PAIN ASSESSMENT
+
+p
+    u Answer applicable question on Pain Assessment, even if no pain reported. (Required for HIS)

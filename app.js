@@ -62,7 +62,7 @@ app.use('/patient', patientRouter);
 
 //Assessment
 app.use('/patient/nursing-assessment',nursingRouter);
-app.use('/psychosocial-assessment',psychosocialRouter);
+app.use('/patient/psychosocial-assessment',psychosocialRouter);
 app.use('/spiritual-assessment',spiritualRouter);
 
 

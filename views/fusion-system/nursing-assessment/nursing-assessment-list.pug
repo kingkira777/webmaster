@@ -7,9 +7,30 @@ block content
                 | Nursing Assessment
             .card-options 
                 .card-options 
-                        a(href="/patient/nursing-assessment/"+patientinfo[0].patient_no+"/add-update-nursingAssessment").btn.btn-secondary.btn-sm
+                        a(href="/patient/nursing-assessment/"+patientinfo[0].patient_no+"/add-update-nursingassessment").btn.btn-secondary.btn-sm
                             i.fa.fa-plus 
                             | Add New Assessment
 
         .card-body
+
+            table.table.table-stripped.table-hover 
+                thead
+                    tr 
+                        th Assessment Date 
+                        th Time 
+                        th Duration 
+                        th Staff 
+                        th Type 
+                        th Status 
+                        th Assessment
+                tbody
+                    each assessment in assessmentList 
+                        tr 
+                            td= assessment.n_visitdate
+                            th= assessment.n_timein +" - "+ assessment.n_timeout
+                            th= assessment.n_duration
+                            th= assessment.n_staff
+                            th= assessment.n_reasonforassessment
+                            th ''
+                            th ''
         

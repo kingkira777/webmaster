@@ -1,0 +1,556 @@
+.panel.panel-primary
+    .tab-menu-heading
+        .tabs-menu1
+            // Tabs
+            ul.nav.panel-tabs
+                li
+                    a.active(href='#patient', data-toggle='tab') Patient
+                li
+                    a(href='#pcg', data-toggle='tab') PCG 
+                li
+                    a(href='#envi', data-toggle='tab') Environmental
+                li
+                    a(href='#mobility', data-toggle='tab') Mobility
+                li
+                    a(href='#adl', data-toggle='tab') ADL Assessment
+                li
+                    a(href='#dme', data-toggle='tab') DME Device
+                li
+                    a(href='#iv', data-toggle='tab') IV Assessment
+
+    .panel-body.tabs-menu-body
+        .tab-content
+            #patient.tab-pane.active
+                .row 
+                    .col-md-8
+                        p 
+                        | (If patient is unable to answer, PCG can answer)
+                        input(type="text" name="patient_01").ipt-sm
+                    .col-sm-4 
+                        label(for="patient_02")
+                            input(type="checkbox" name="patient_02") 
+                            | No Limitations
+                hr 
+                .row 
+                    .col-md-8 
+                        | Site of Service at Admission:
+                    .col-md-4
+                        .form-group.has-success
+                            select.ipt-sm
+                                option(value="") Required for HIS--> 
+                .row  
+                    .col-md-8
+                        | Admitted From (Immediately preceeding admission, where was the Patient?)
+                    .col-md-4
+                        .form-group.has-success
+                            select.ipt-sm
+                                option(value="") Required for HIS--> 
+                .row 
+                    .col-md-8 
+                        | CPR Preference(DNR/Code Status)?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm
+                                option(value="") Required for HIS--> 
+                .row 
+                    .col-md-8 
+                        | Wants Other Life-Sustaining Treatment Preferences (Other than CPR)
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm 
+                                option(value="") Required for HIS-->  
+                .row 
+                    .col-md-8   
+                        | Does Pt/Family want to avoid hospitalization?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm.aler-success
+                                option(value="") Select-->
+                .row 
+                    .col-md-8 
+                        | Any special event/ desire for patient before dying?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm 
+                                option(value="") Select--> 
+                .row 
+                    .col-md-8 
+                        | Able to understand and participate in own care?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm  
+                                option(value="") Select--> 
+                .row 
+                    .col-md-8 
+                        | Is there a need for an interpreter?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm  
+                                option(value="") Select--> 
+                .row 
+                    .col-md-8 
+                        | If Yes, offer of interpreter
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm  
+                                option(value="") Select--> 
+                .row 
+                    .col-md-8 
+                        | Has Patient/Spouse served in the military?
+                    .col-md-4
+                        .form-group.has-success 
+                            select.ipt-sm  
+                                option(value="") Select--> 
+
+                .row 
+                    .col-md-8 
+                        | Is Patient able to safely administer meds?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm  
+                                option(value="") Select--> 
+
+                .row 
+                    .col-md-8 
+                        | If No, who is able to safely administer meds to Patient?
+                    .col-md-4 
+                        .form-group.has-success
+                            select.ipt-sm  
+                                option(value="") Select--> 
+                            input(type="text" placeholder="Others").ipt-sm
+
+            //- PCG====================================
+            #pcg.tab-pane
+
+                .row  
+                    .col-sm-10 
+                    .col-sm-2 
+                        input(type="checkbox")
+                        | No PCG  
+
+                .row 
+                    .col-sm-8 
+                        | Is PCG expressing Anxiety?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | If PCG is hard of hearing/deaf, is sign language interpreter needed?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+
+                .row 
+                    .col-sm-8 
+                        | How is PCG’s health status?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | Is PCG able to participate in care?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | Any young children at home?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | Any pets? (If yes, specify):
+                        input(type="text").ipt-sm
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | Is PCG able to safely administer meds?
+                    .col-sm-4 
+                        .form-group 
+                            select.ipt-sm     
+                                option(value="") Select--> 
+
+                .row 
+                    .col-sm-8 
+                        | If No, who is able to safely administer meds to Patient?
+                    .col-sm-4 
+                        .form-group 
+                            input(type="text").ipt-sm 
+
+                p 
+                    strong
+                        | PCG requires education on:
+                    input(type="checkbox") 
+                    | Hospice
+                    input(type="checkbox") 
+                    | Disease Process
+                    input(type="checkbox") 
+                    | Medication
+                    input(type="checkbox") 
+                    | Advance directive
+
+            //- Environmental =========================================
+            #envi.tab-pane
+                p 
+                    i (If any checked, complete safety assessment addendum w/comprehensive assessment)
+
+                .row  
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Alone at night
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Alone during day
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Insufficient heat/cooling
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            |  Limited lighting
+                .row  
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Oxygen in use
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Limited water
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            | Dangerous neighborhood
+                    .col-sm-3 
+                        .form-group
+                            input(type="checkbox")
+                            |  Medication (risk of error or diversion)
+                p  
+                    |  Other (specify):
+                    input(type="text").ipt-sm
+
+            //- Mobility==============================================
+            #mobility.tab-pane
+                .row 
+                    .col-sm-12  
+                        input(type="radio")
+                        | Ambulatory
+                    .col-sm-3 
+                        input(type="checkbox")
+                        | Cane
+                    .col-sm-3 
+                        input(type="checkbox")
+                        | Walker
+                    .col-sm-3 
+                        input(type="checkbox")
+                        | Wheelchair
+                    .col-sm-3 
+                        input(type="checkbox")
+                        | Stand-By Assist
+                    .col-sm-3 
+                        input(type="checkbox")
+                        | Moderate Assist
+                    .col-sm-3 
+                        input(type="checkbox")
+                        |  Maximum Assist
+                    .col-sm-12
+                        p  
+                            | If wheelchair, are ramps available where needed?  
+                            input(type="radio")
+                            | Yes   
+                            input(type="radio")
+                            | No    
+                    .col-sm-12 
+                        p    
+                            | Endurance # of step before resting 
+                            input(type="text").ipt-sm
+                hr
+                .row 
+                    .col-sm-12 
+                        input(type="radio") 
+                        | Non-Ambulatory
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Bed bound
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Bed rest BRP
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Up As Tolerated
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Maximum Assist
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Transfer Bed/Chair
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Exercised Prescribe
+                    .col-sm-3 
+                        input(type="checkbox") 
+                        | Range of Motion
+
+
+
+            //- ADL Assessment======================================
+            #adl.tab-pane
+                span.text-center 
+                    | (Dependence Scale: 0 – Independent, 1- Minimal/Supervision, 2 - Moderate, 3 – Maximal/Complete)
+
+                .row 
+                    .col-sm-10
+                        | Ambulation 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Toileting 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Transfer 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Dressing 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Feeding 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Bathing 
+                    .col-sm-2 
+                        select.ipt-sm
+                            option(value="") Select--> 
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                .row 
+                    .col-sm-10
+                        | Total ADL score (Possible 0 - 18)
+                    .col-sm-2 
+                        input(type="text" readonly).ipt-sm     
+                .row 
+                    .col-sm-10
+                        | Total number of activities with complete dependence(0-6) 
+                    .col-sm-2 
+                        input(type="text" readonly).ipt-sm
+
+            //- DME Device
+            #dme.tab-pane
+                .row 
+                    .col-sm-3
+                        | Air Mattress 
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Bed       
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Bedpan 
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Egg crate   
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+
+                .row 
+                    .col-sm-3
+                        | Overbed table   
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Cane            
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Walker        
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Wheelchair 
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+
+                .row 
+                    .col-sm-3
+                        | Shower chair  
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Geri-chair/recliner               
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Hoyer lift            
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Urinal             
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+
+                .row 
+                    .col-sm-3
+                        | E-Tank   
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Nebulizer                   
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | Suction Machine             
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-3
+                        | O2 Conc             
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+
+                .row 
+                    .col-sm-3
+                        | Commode  
+                        select.ipt-sm 
+                            option(value="")
+                            option(value="has") Has
+                            option(value="need") Need
+                    .col-sm-9
+                        | Others 
+                        input(type="text").ipt-sm
+
+            //- IV Assessment
+            #iv.tab-pane
+                .row 
+                    .col-sm-6 
+                        | Type 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Size 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Location 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Date of Insertion 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Dressing Type 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Frequency of Change  
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Flush Solution 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Flush Frequency 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Other Site/Care 
+                    .col-sm-6
+                        input(type="text").ipt-sm
+                .row 
+                    .col-sm-6 
+                        | Need 
+                    .col-sm-6
+                        input(type="checkbox")
+                        | Continues 
+                        | Other 
+                        input(type="text" placeholder="Others").ipt-sm

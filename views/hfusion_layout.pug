@@ -127,7 +127,127 @@ html(lang="en", dir="ltr")
                 i.fa.fa-angle-up
 
 
+        //SAMPLE MODAL PANEL
+        #painAssessmentModal.modal.fade(data-backdrop="static" data-keyboard="false")
+            .modal-dialog.modal-lg(role='document')
+                .modal-content
+                    .modal-header.pd-x-20
+                        h6.modal-title Pain Assessment
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') ×
+                    .modal-body.pd-20
+                        
+                        .panel.panel-primary 
+                            .tab-menu-heading 
+                                .tabs-menu1 
+                                    ul.nav.panel-tabs 
+                                        li
+                                            a(href="#mainPain", class="active", data-toggle="tab")
+                                                | Pain Assessment
+                                            a(href="#painLoc", data-toggle="tab")
+                                                | Pain Loc/Descriptions 
 
+                            .panel-body.tabs-menu-body 
+                                .tab-content 
+                                    //- MAIN PAIN==============================
+                                    #mainPain.tab-pane.active
+                                        h6.font-weight-bold OVERALL PAIN INTENSITY
+                                        .row 
+                                            .col-sm-8  
+                                                | Level of pain reported at the time of assessment (> 0,will be reported as an active problem on HIS):
+                                            .col-sm-4 
+                                                select.ipt-sm  
+                                                    option(value="") Select-->
+
+                                        h6.font-weight-bold SIT SCORE
+                                        .row 
+                                            .col-sm-8 
+                                                | Patient Self-Identified Threshold (SIT) - PCG can respond:
+                                            .col-sm-4 
+                                                select.ipt-sm     
+                                                    option(value="") Select--> 
+
+                                        h6.font-weight-bold ADDITIONAL SIGNS AND SYMPTOMS OF PAIN
+                                        .row  
+                                            .col-sm-12 
+                                                input(type="checkbox") 
+                                                |    Increased blood pressure 
+                                                input(type="checkbox") 
+                                                |    Increased pulse 
+                                                input(type="checkbox") 
+                                                |    Increased respiratory rate
+                                                input(type="checkbox") 
+                                                |    Guarding
+
+                                            .col-sm-12 
+                                                input(type="text" placeholder="Others: ").ipt-sm 
+                                                
+                                        h6.font-weight-bold Narrative
+                                        textarea(name="", rows="5").ipt-sm 
+
+
+
+
+                                    
+                                    //- MAIN PAIN==============================
+                                    #painLoc.tab-pane 
+                                        .row 
+                                            .col-sm-4 
+                                                label(for="opendate") Open Date 
+                                                input(type="text" name="opendate").fc-datepicker.ipt-sm
+                                            .col-sm-4 
+                                                label(for="location") Location 
+                                                input(type="text" name="location").ipt-sm      
+                                            .col-sm-4 
+                                                label(for="intensity") Intensity 
+                                                input(type="text" name="intensity").ipt-sm    
+                                        .row 
+                                            .col-sm-4 
+                                                label(for="activity") Activity 
+                                                input(type="text" name="activity").ipt-sm 
+                                            .col-sm-4 
+                                                label(for="frequency") Frequency 
+                                                input(type="text" name="frequency").ipt-sm
+                                            .col-sm-4 
+                                                label(for="description") Description
+                                                input(type="text" name="description").ipt-sm
+
+                                        .row 
+                                            .col-sm-6   
+                                                label(for="duration") Duration 
+                                                input(type="text" name="duration").ipt-sm     
+                                                input(type="checkbox") 
+                                                |   Unable to Assess
+                                            .col-sm-6   
+                                                label(for="qualitylife") Does pain affect quality of life?
+                                                input(type="text" name="qualitylife").ipt-sm     
+                                                input(type="checkbox")
+                                                |   Unable to assess
+                                        
+                                        .row 
+                                            .col-sm-4 
+                                                label(for="better") What makes pain better?
+                                                input(type="text" name="better").ipt-sm   
+                                            .col-sm-4 
+                                                label(for="worse") What makes pain worse?
+                                                input(type="text" name="worse").ipt-sm     
+                                            .col-sm-4 
+                                                label(for="intervention") Type of Intervention
+                                                input(type="text" name="intervention").ipt-sm      
+
+                                        .row   
+                                            .col-sm-4 
+                                                label(for="working") How well it is working?
+                                                input(type="text" name="working").ipt-sm      
+                                            .col-sm-4 
+                                                label(for="status") Status 
+                                                input(type="text" name="status").ipt-sm
+                                        
+                             
+
+                    .modal-footer
+                        button.btn.btn-primary(type='button') Save changes
+                        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
 
 
 

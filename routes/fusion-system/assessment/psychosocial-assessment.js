@@ -5,8 +5,9 @@ const con = require('../../modules/connection');
 
 
 
-router.get('/',function(req,res,next){
-
+router.get('/(:patientno)',[master.patient_info],function(req,res,next){
+    res.send(patienfo);
+    res.end();
 });
 
 

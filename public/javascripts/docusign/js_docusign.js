@@ -73,13 +73,14 @@ $(function () {
     // var tempFile = "/docusign/pending/ca/8f7ca29204a6.pdf";
     var loadingTask = pdfjsLib.getDocument(filepath);
     loadingTask.promise.then(function (pdf) {
+        $('body').removeClass('fusion');
         var pdf_container = document.getElementById('pdf-content');
         var pageNumber = pdf.numPages + 1;
-        if(pageNumber > 45){
-            swal('Pages  Exceed', 'PDF must be less than 40 pages, the current PDF pages is: '+ pageNumber, 'warning');
-            $('body').removeClass('fusion');
-            return;
-        }
+        // if(pageNumber > 45){
+        //     swal('Pages  Exceed', 'PDF must be less than 40 pages, the current PDF pages is: '+ pageNumber, 'warning');
+        //     $('body').removeClass('fusion');
+        //     return;
+        // }
             
 
 
