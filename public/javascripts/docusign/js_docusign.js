@@ -256,7 +256,7 @@ $(function () {
 
             var totalPages = Math.ceil(container_height / canvas_height) - 1;
 
-            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+            var imgData = canvas.toDataURL("image/jpeg", 1.5);
 
             var pdf = new jsPDF('p', 'pt', 'a4');
             var width = pdf.internal.pageSize.width;

@@ -15,7 +15,6 @@ function get_assessment_list(req,res,next){
     con.query(s,sval,(err,rs)=>{
         assessment_list = rs;
     });
-    console.log(assessment_list); 
     next();
 }
 

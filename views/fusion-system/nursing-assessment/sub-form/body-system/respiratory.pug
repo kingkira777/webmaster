@@ -1,0 +1,128 @@
+table(cellpadding="5")
+    tr
+        td 
+            strong Dyspnea :
+        td 
+            input(type="radio")
+            |   None 
+            input(type="radio")
+            |   Mild 
+            input(type="radio")
+            |   Moderate 
+            input(type="radio")
+            |   Severe 
+            p 
+                |  Even though SOB is present, does patient decline treatment:
+                select(name="")
+                    option(value="") Select--> 
+                    option(value="yes") Yes 
+                    option(value="no") No 
+                |  (Required for HIS)
+
+    tr  
+        td 
+            strong  Exertion Level: 
+        td 
+            input(type="radio")
+            |   At rest 
+            input(type="radio")
+            |   w/mild exertion 
+            input(type="radio")
+            |   w/speech  
+            input(type="radio")
+            |   Push of speech
+            input(type="radio")
+            |   Pursed lip breathing 
+            br 
+            |  Other 
+            i (specify)
+            input(type="text").ipt-sm
+
+    tr 
+        td 
+            strong  Lungs of Sounds: 
+        td  
+            input(type="checkbox")
+            |   Clear 
+            
+            input(type="checkbox")
+            |   A-Diminished 
+            
+            input(type="checkbox")
+            |   B-Wheezes 
+            input(type="checkbox")
+            |   C-Crackies 
+            input(type="checkbox")
+            |   D-Rales 
+            input(type="checkbox")
+            |   E-Rhonchi 
+    
+    tr 
+        td 
+            strong Respirations: 
+        td 
+            input(type="checkbox")
+            |   Normal 
+            input(type="checkbox")
+            |   Labored
+            input(type="checkbox")
+            |   Agonal
+            input(type="checkbox")
+            |   Tachypnea
+            input(type="checkbox")
+            |   Bradynpea 
+            input(type="checkbox")
+            |   Cheyene-Stokes
+            input(type="checkbox")
+            |   Orthnopnea 
+    
+    tr
+        td 
+            strong  Cough
+        td  
+            input(type="checkbox")
+            |   None 
+            input(type="checkbox")
+            |   Dry/Non-productive 
+            input(type="checkbox")
+            |   Productive
+            input(type="checkbox")
+            |   Hemoptysis
+            input(type="checkbox")
+            |   Barral-Chest
+            input(type="checkbox")
+            |   Sputum (indicate color)
+            input(type="text")
+    
+    tr  
+        td  
+            strong Is patient on O2 Therapy?
+            
+        td 
+            input(type="radio")
+            |   None    
+            input(type="radio")
+            |   Yes     
+            br 
+            | Current O2 rate/type:     
+            input(type="text")  
+            |   L/min       
+            input(type="checkbox")
+            |   Nasal cannula       
+            input(type="checkbox")
+            |   Mask        
+            br 
+            |   O2 frequency:       
+            input(type="checkbox")      
+            |   Continuous      
+            input(type="checkbox")      
+            |   PRN         
+            br 
+            |   O2 saturation:       
+            input(type="text")      
+            | %         
+            input(type="checkbox")      
+            |   Room air @      
+            input(type="text")      
+            |   L/min          
+    

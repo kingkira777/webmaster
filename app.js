@@ -6,9 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 
-
-
-
 //Include Router
 var frontWebRouter = require('./routes/front-web/index');
 var docusignRouter = require('./routes/docusign/docusign');
@@ -22,9 +19,6 @@ var patientRouter = require('./routes/fusion-system/patient/patient');
 var nursingRouter = require('./routes/fusion-system/assessment/nursing-assessment');
 var psychosocialRouter = require('./routes/fusion-system/assessment/psychosocial-assessment');
 var spiritualRouter = require('./routes/fusion-system/assessment/spiritual-assessment');
-
-
-
 
 var app = express();
 

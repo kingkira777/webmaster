@@ -1,0 +1,221 @@
+h6 
+    strong BP Symptom
+
+.row 
+    .col-sm-3 
+        label(for="bp_normal")
+        input(type="radio" name="bp_normal")
+        | Normal(SBP 91-159)  
+    
+    .col-sm-3 
+        label(for="bp_hypotension")
+        input(type="radio" name="bp_hypotension")
+        | Hypotension ( SBP < 91 )    
+
+    .col-sm-3 
+        label(for="bp_hypertension")
+        input(type="radio" name="bp_hypertension")
+        | Hypertension ( SBP > 159 )
+
+br
+table(style="width:100%")
+    tr 
+        td 
+            strong Pulse 
+        td 
+    tr 
+        td
+        td 
+            strong Apical :     
+            
+            label(for="pa_regular")
+            input(type="checkbox" name="pa_regular")
+            | Regular       
+        td
+            label(for="pa_irregular")
+            input(type="checkbox" name="pa_irregular")
+            | Irregular     
+        td
+            label(for="pa_weak")
+            input(type="checkbox" name="pa_weak")
+            | Weak      
+        td
+            label(for="pa_tachycardia")
+            input(type="checkbox" name="pa_tachycardia")
+            | Tachycardia       
+        td
+            label(for="pa_bradycardia")
+            input(type="checkbox" name="pa_bradycardia")
+            | Bradycardia              
+        td
+            label(for="pa_absent")
+            input(type="checkbox" name="pa_absent")
+            | Absent       
+
+    tr 
+        td
+        td 
+            strong Pedal :     
+            
+            label(for="pp_regular")
+            input(type="checkbox" name='pp_regular')
+            | Regular       
+        td
+            label(for="pp_irregular")
+            input(type="checkbox" name="pp_irregular")
+            | Irregular     
+        td
+            label(for="pp_weak")
+            input(type="checkbox" name="pp_weak")
+            | Weak      
+        td
+            label(for="pp_tachycardia")
+            input(type="checkbox" name="pp_tachycardia")
+            | Tachycardia       
+        td
+            label(for="pp_bradycadia")
+            input(type="checkbox" name="pp_bradycadia")
+            | Bradycardia              
+        td
+            label(for="pp_absent")
+            input(type="checkbox" name="pp_absent")
+            | Absent       
+    
+    tr 
+        td
+        td 
+            strong Radial :     
+            
+            label(for="pr_regular")
+            input(type="checkbox" name="pr_regular")
+            | Regular       
+        td
+            label(for="pr_irregular")
+            input(type="checkbox" name="pr_irregular")
+            | Irregular     
+        td
+            label(for="pr_weak")
+            input(type="checkbox" name="pr_weak")
+            | Weak      
+        td
+            label(for="pr_tachycardia")
+            input(type="checkbox" name="pr_tachycardia")
+            | Tachycardia       
+        td
+            label(for="pr_bradycadia")
+            input(type="checkbox" name="pr_bradycadia")
+            | Bradycardia              
+        td
+            label(for="pr_absent")
+            input(type="checkbox" name="pr_absent")
+            | Absent       
+
+    tr 
+        td
+        td 
+            strong Femoral :     
+            
+            label(for="pf_regular")
+            input(type="checkbox" name="pf_regular")
+            | Regular       
+        td
+            label(for="pf_irregular")
+            input(type="checkbox" name='pf_irregular')
+            | Irregular     
+        td
+            label(for="pf_weak")
+            input(type="checkbox" name="pf_weak")
+            | Weak      
+        td
+            label(for="pf_tachycardia")
+            input(type="checkbox" name="pf_tachycardia")
+            | Tachycardia       
+        td
+            label(for="pf_bradycardia")
+            input(type="checkbox" name="pf_bradycardia")
+            | Bradycardia              
+        td
+            label(for="pf_absent")
+            input(type="checkbox" name="pf_absent")
+            | Absent       
+br 
+table(style="width=100%")
+    tr  
+        td
+            strong Cardiac-related pain: 
+        td 
+            input(type="radio") 
+            | No 
+            input(type="radio") 
+            | Yes 
+            i (Specify)
+            input(type="text")
+    tr 
+        td  
+        td 
+            strong Edema:  
+            input(type="radio") 
+            | No    
+            input(type="radio")
+            | Yes   
+            i (If Yes, specify location) 
+            input(type="text")
+
+    tr  
+        td 
+        td 
+            strong Pitting Level: 
+            input(type="radio")
+            | 0     
+            input(type="radio")
+            | 1 
+            input(type="radio")
+            | 2
+            input(type="radio")
+            | 3 
+            input(type="radio")
+            | 4 
+            input(type="radio")
+            | 4+ 
+
+    tr 
+        td  
+            strong Skin Color: 
+        td 
+            input(type="radio")
+            |   Normal 
+            input(type="radio")
+            |   Pale 
+            input(type="radio")
+            |   Cyanotic 
+            input(type="radio")
+            |   Other 
+            i (If other, specify)
+            input(type="text")
+    tr 
+        td 
+            strong  Other Factor: 
+        td 
+            input(type="checkbox")
+            |   Pacemaker 
+            input(type="checkbox")
+            |   Internal defibrillator
+            input(type="checkbox")
+            |   Jugular vein distention 
+            input(type="checkbox")
+            |   Varicose veins 
+            input(type="checkbox")
+            |   Central Venous line 
+            input(type="checkbox")
+            |   Extremities cool
+            input(type="checkbox")
+            |   Stasis Ulcer
+
+    tr  
+        td(colspan="2") 
+            strong
+                i Other Observations (If applicable) 
+            input(type="text").form-control.input-sm  
+
+
+
