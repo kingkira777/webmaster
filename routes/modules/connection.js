@@ -15,8 +15,8 @@ function Connetion(){
     //HOSPICE FUSION DATABASE
     con = mysql.createPool({
         host : 'localhost',
-        user : 'master',
-        password : 'master707!',
+        user : 'hfusion',
+        password : '*hfusion124!',
         database :  'master'
     }); 
 
